@@ -8,8 +8,8 @@ import com.example.banquanao.donhang.DonHang;
 import com.example.banquanao.donhang.DonHangRepository;
 import com.example.banquanao.kichco.KichCo;
 import com.example.banquanao.kichco.KichCoRepository;
-import com.example.banquanao.loaisanpham.DanhMuc;
-import com.example.banquanao.loaisanpham.DanhMucRepository;
+import com.example.banquanao.danhmuc.DanhMuc;
+import com.example.banquanao.danhmuc.DanhMucRepository;
 import com.example.banquanao.sanpham.SanPham;
 import com.example.banquanao.sanpham.SanPhamRepository;
 import com.example.banquanao.thuonghieu.ThuongHieu;
@@ -34,11 +34,11 @@ public class Config {
         return args -> {
             // loai san pham
             DanhMuc quansip = new DanhMuc();
-            quansip.setTenloaisanpham("quan sip");
+            quansip.setTendanhmuc("quan sip");
             DanhMuc quanjean = new DanhMuc();
-            quanjean.setTenloaisanpham("quan jean");
+            quanjean.setTendanhmuc("quan jean");
             DanhMuc bra = new DanhMuc();
-            bra.setTenloaisanpham("bra");
+            bra.setTendanhmuc("bra");
             loaiSanPhamRepository.saveAll(List.of(quansip, quanjean, bra));
 
             // thuong hieu
@@ -48,9 +48,6 @@ public class Config {
             adidas.setTenthuonghieu("adidas");
             ThuongHieu puma = new ThuongHieu();
             puma.setTenthuonghieu("puma");
-//            thuongHieuRepository.save(nike);
-//            thuongHieuRepository.save(adidas);
-//            thuongHieuRepository.save(puma);
             thuongHieuRepository.saveAll(List.of(nike, adidas, puma));
 
 
@@ -66,7 +63,8 @@ public class Config {
 
             // san pham
             SanPham sp1 = new SanPham();
-            sp1.setTensanpham("san pham 1");
+            sp1.setTensanpham("áo cộc tay thế hệ mới");
+            sp1.setSlug(sp1.getTensanpham());
             sp1.setThuonghieu(nike);
             sp1.setLoaisanpham(quansip);
 

@@ -1,8 +1,10 @@
 package com.example.banquanao.sanpham;
 
 import com.example.banquanao.chitietkichco.ChiTietKichCo;
-import com.example.banquanao.loaisanpham.DanhMuc;
+import com.example.banquanao.danhmuc.DanhMuc;
 import com.example.banquanao.thuonghieu.ThuongHieu;
+import com.example.banquanao.utils.Slug;
+import jdk.jshell.execution.Util;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -43,4 +45,8 @@ public class SanPham {
 
     @OneToMany(mappedBy = "sanpham")
     private List<ChiTietKichCo> chitietkichcos;
+
+    public void setSlug(String slug) {
+        this.slug = Slug.toSlug(slug);
+    }
 }

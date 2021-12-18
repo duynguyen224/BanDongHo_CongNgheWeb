@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class BanquanaoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BanquanaoApplication.class, args);
+	 	SpringApplication.run(BanquanaoApplication.class, args);
 	}
 
 }

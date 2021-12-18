@@ -1,4 +1,4 @@
-package com.example.banquanao.loaisanpham;
+package com.example.banquanao.danhmuc;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,7 +1,7 @@
-package com.example.banquanao.loaisanpham;
+package com.example.banquanao.danhmuc;
 
 import com.example.banquanao.sanpham.SanPham;
-import jdk.jfr.Enabled;
+import com.example.banquanao.utils.Slug;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,8 +21,13 @@ public class DanhMuc {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String tenloaisanpham;
+    private String slug;
+    private String tendanhmuc;
 
     @OneToMany(mappedBy = "loaisanpham")
     private List<SanPham> sanphams;
+
+    public void setSlug(String slug) {
+        this.slug = Slug.toSlug(slug);
+    }
 }
