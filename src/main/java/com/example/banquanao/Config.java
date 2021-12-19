@@ -66,17 +66,17 @@ public class Config {
             sp1.setTensanpham("áo cộc tay thế hệ mới");
             sp1.setSlug(sp1.getTensanpham());
             sp1.setThuonghieu(nike);
-            sp1.setLoaisanpham(quansip);
+            sp1.setDanhmuc(quansip);
 
             SanPham sp2 = new SanPham();
             sp2.setTensanpham("san pham 2");
             sp2.setThuonghieu(nike);
-            sp2.setLoaisanpham(quansip);
+            sp2.setDanhmuc(quansip);
 
             SanPham sp3 = new SanPham();
             sp3.setTensanpham("san pham 3");
             sp3.setThuonghieu(adidas);
-            sp3.setLoaisanpham(quansip);
+            sp3.setDanhmuc(quansip);
 
             sanPhamRepository.saveAll(List.of(sp1, sp2, sp3));
 

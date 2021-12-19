@@ -33,11 +33,11 @@ public class SanPham {
     private String anhphu3;
     private String slug;
     private String mota;
-    private Boolean gioitinh;
+    private String gioitinh;
 
     @ManyToOne
-    @JoinColumn(name = "maloaisanpham", referencedColumnName = "id")
-    private DanhMuc loaisanpham;
+    @JoinColumn(name = "madanhmuc", referencedColumnName = "id")
+    private DanhMuc danhmuc;
 
     @ManyToOne
     @JoinColumn(name = "mathuonghieu", referencedColumnName = "id")

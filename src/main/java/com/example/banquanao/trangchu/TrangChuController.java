@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class TrangChuController {
-    @GetMapping(value = {"/", "/trangchu"})
+    @GetMapping(value = {"admin", "admin/trang-chu"})
     public String trangchu(){
         return "admin/trangchu";
     }

@@ -24,7 +24,7 @@ public class DanhMuc {
     private String slug;
     private String tendanhmuc;
 
-    @OneToMany(mappedBy = "loaisanpham")
+    @OneToMany(mappedBy = "danhmuc")
     private List<SanPham> sanphams;
 
     public void setSlug(String slug) {
