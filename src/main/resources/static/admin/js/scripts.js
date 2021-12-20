@@ -24,3 +24,10 @@ window.addEventListener('DOMContentLoaded', event => {
     }
 
 });
+
+function openModal(){
+    $('#suaModal').modal('show');
+}
+
+
+

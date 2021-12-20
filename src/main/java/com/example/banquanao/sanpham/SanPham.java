@@ -4,6 +4,7 @@ import com.example.banquanao.chitietkichco.ChiTietKichCo;
 import com.example.banquanao.danhmuc.DanhMuc;
 import com.example.banquanao.thuonghieu.ThuongHieu;
 import com.example.banquanao.utils.Slug;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jdk.jshell.execution.Util;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -49,4 +50,9 @@ public class SanPham {
     public void setSlug(String slug) {
         this.slug = Slug.toSlug(slug);
     }
+
+    public void setAnhchinh(String anhchinh) {
+        this.anhchinh = "/image_upload/" + anhchinh;
+    }
+
 }

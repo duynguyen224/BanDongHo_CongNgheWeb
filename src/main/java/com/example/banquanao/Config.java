@@ -63,19 +63,45 @@ public class Config {
 
             // san pham
             SanPham sp1 = new SanPham();
-            sp1.setTensanpham("áo cộc tay thế hệ mới");
+            sp1.setTensanpham("áo cộc tay thế hệ mới 1");
+            sp1.setGiaban(100000.0f);
+            sp1.setTongsoluong(100);
+            sp1.setAnhchinh("TKB.png");
+            sp1.setAnhphu1("TKB.png");
+            sp1.setAnhphu2("TKB.png");
+            sp1.setAnhphu3("TKB.png");
             sp1.setSlug(sp1.getTensanpham());
+            sp1.setMota("đây là mô tả");
+            sp1.setGioitinh("Nam");
             sp1.setThuonghieu(nike);
             sp1.setDanhmuc(quansip);
 
             SanPham sp2 = new SanPham();
-            sp2.setTensanpham("san pham 2");
+            sp2.setTensanpham("áo cộc tay thế hệ mới 2");
+            sp2.setGiaban(300000.0f);
+            sp2.setTongsoluong(110);
+            sp2.setAnhchinh("TKB.png");
+            sp2.setAnhphu1("TKB.png");
+            sp2.setAnhphu2("TKB.png");
+            sp2.setAnhphu3("TKB.png");
+            sp2.setSlug(sp1.getTensanpham());
+            sp2.setMota("đây là mô tả");
+            sp2.setGioitinh("Nam");
             sp2.setThuonghieu(nike);
-            sp2.setDanhmuc(quansip);
+            sp2.setDanhmuc(quanjean);
 
             SanPham sp3 = new SanPham();
-            sp3.setTensanpham("san pham 3");
-            sp3.setThuonghieu(adidas);
+            sp3.setTensanpham("áo cộc tay thế hệ mới 3");
+            sp3.setGiaban(10000.0f);
+            sp3.setTongsoluong(10);
+            sp3.setAnhchinh("TKB.png");
+            sp3.setAnhphu1("TKB.png");
+            sp3.setAnhphu2("TKB.png");
+            sp3.setAnhphu3("TKB.png");
+            sp3.setSlug(sp1.getTensanpham());
+            sp3.setMota("đây là mô tả");
+            sp3.setGioitinh("Nữ");
+            sp3.setThuonghieu(nike);
             sp3.setDanhmuc(quansip);
 
             sanPhamRepository.saveAll(List.of(sp1, sp2, sp3));
