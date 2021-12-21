@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{/admin/_layout.html}">
+<head>
+    <title>Content page</title>
+    <!--    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>-->
+    <!--    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script></head>-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<section layout:fragment="sanpham_sua">
+    <div class="modal-body col-md-8 col-md-offset-4">
+        <div class="input-group input-group-sm mb-3" style="text-align: center">
+            <div class="input-group-prepend col-sm-12">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Đơn hàng</span>
+            </div>
+        </div>
+
+        <div th:each="ctdh : ${chitietdonhang}">
+            <h1 th:text="${ctdh.sanpham.id}"></h1> ông làm nốt nhớ
+        </div>
+
+        <form th:action="@{/admin/don-hang/xem-don-hang/{id}(id=${donhang.id})}" th:object="${donhang}" method="post">
+
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend col-sm-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Ngày lập</span>
+                </div>
+                <input type="text" class="form-control col-sm-9" aria-label="Small"
+                       aria-describedby="inputGroup-sizing-sm"
+                       name="ngaylap"
+                       th:field="*{ngaylap}" readonly
+                />
+            </div>
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend col-sm-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Địa chỉ giao hàng</span>
+                </div>
+                <input type="text" class="form-control col-sm-9" aria-label="Small"
+                       aria-describedby="inputGroup-sizing-sm"
+                       name="diachigiaohang"
+                       th:field="*{diachigiaohang}" readonly
+                />
+            </div>
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend col-sm-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Số điện thoại</span>
+                </div>
+                <input type="text" class="form-control col-sm-9" aria-label="Small"
+                       aria-describedby="inputGroup-sizing-sm"
+                       name="sodienthoai"
+                       th:field="*{sodienthoai}" readonly
+                />
+            </div>
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend col-sm-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Tên khách hàng</span>
+                </div>
+                <input type="text" class="form-control col-sm-9" aria-label="Small"
+                       aria-describedby="inputGroup-sizing-sm"
+                       name="tenkhachhang"
+                       th:field="*{tenkhachhang}" readonly
+                />
+            </div>
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend col-sm-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Email</span>
+                </div>
+                <input type="text" class="form-control col-sm-9" aria-label="Small"
+                       aria-describedby="inputGroup-sizing-sm"
+                       name="email"
+                       th:field="*{email}" readonly
+                />
+            </div>
+
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend col-sm-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Trạng thái</span>
+                </div>
+
+                <select th:field="*{trangthai}" class="form-select col-sm-9" aria-label="Default select example"
+                        name="trangthai">
+                    <option  selected value="dangxuly">Đang xử lý</option>
+                    <option  value="thanhcong">Thành công</option>
+                    <option  value="dahuy">Đã hủy</option>
+                </select>
+                <input  th:if="${donhang.trangthai == 'dangxuly'}" type="button" class=" btn btn-warning" value="Đang xử lý">
+                <input  th:if="${donhang.trangthai == 'thanhcong'}" type="button" class=" btn btn-success" value="Thành công">
+                <input  th:if="${donhang.trangthai == 'dahuy'}" type="button" class=" btn btn-success" value="Đã hủy">
+
+            </div>
+
+            <a th:href="@{/admin/don-hang}" type="button" class="btn btn-secondary"
+               style="margin-bottom: 10px; border: none">
+                Quay lại
+            </a>
+            <input type="submit" value="Cập nhật" class="btn btn-primary" style="margin-bottom: 10px">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-table me-1"></i>
+                    DataTable Example
+                </div>
+                <div class="card-body">
+                    <table id="datatablesSimple">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Ngày lập</th>
+                            <th>Trạng thái</th>
+                            <th>Địa chỉ giao hàng</th>
+                            <th>Số điện thoại</th>
+                            <th>Email</th>
+                            <th>Thao tác</th>
+                        </tr>
+                        </thead>
+                        <tfoot>
+                        <tr>
+                            <th>ID</th>
+                            <th>Ngày lập</th>
+                            <th>Trạng thái</th>
+                            <th>Địa chỉ giao hàng</th>
+                            <th>Số điện thoại</th>
+                            <th>Email</th>
+                            <th>Thao tác</th>
+                        </tr>
+                        </tfoot>
+                        <tbody>
+                        <tr th:each=" sp: ${sanpham}">
+                            <td th:text="${sp.id}"></td>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+</html>

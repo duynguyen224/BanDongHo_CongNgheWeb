@@ -1,5 +1,314 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"-->
+<!--      layout:decorate="~{/admin/_layout.html}">-->
+<!--<head>-->
+<!--    <title>Content page</title>-->
+<!--    <script src="content-script.js"></script>-->
+<!--</head>-->
+<!--<body>-->
+<!--<section layout:fragment="donhang">-->
+<!--    <div class="container-fluid px-4">-->
+<!--        <h1 class="mt-4">Đơn hàng</h1>-->
+<!--        <ol class="breadcrumb mb-4">-->
+<!--            <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>-->
+<!--            <li class="breadcrumb-item active">Quản lý đơn hàng</li>-->
+<!--        </ol>-->
+<!--        <div class="row">-->
+<!--            <div class="col-xl-4 col-md-6">-->
+<!--                <div class="card bg-warning text-white mb-4">-->
+<!--                    <div class="card-body">Đang xử lý</div>-->
+<!--                    <div class="card-footer d-flex align-items-center justify-content-between">-->
+<!--                        <a class="small text-white stretched-link" href="#">View Details</a>-->
+<!--                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-xl-4 col-md-6">-->
+<!--                <div class="card bg-success text-white mb-4">-->
+<!--                    <div class="card-body">Thành công</div>-->
+<!--                    <div class="card-footer d-flex align-items-center justify-content-between">-->
+<!--                        <a class="small text-white stretched-link" href="#">View Details</a>-->
+<!--                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-xl-4 col-md-6">-->
+<!--                <div class="card bg-danger text-white mb-4">-->
+<!--                    <div class="card-body">Đã hủy</div>-->
+<!--                    <div class="card-footer d-flex align-items-center justify-content-between">-->
+<!--                        <a class="small text-white stretched-link" href="#">View Details</a>-->
+<!--                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        <div class="card mb-4">-->
+<!--            <div class="card-header">-->
+<!--                <i class="fas fa-table me-1"></i>-->
+<!--                DataTable Example-->
+<!--            </div>-->
+<!--            <div class="card-body">-->
+<!--                <table id="datatablesSimple">-->
+<!--                    <thead>-->
+<!--                    <tr>-->
+<!--                        <th>Name</th>-->
+<!--                        <th>Position</th>-->
+<!--                        <th>Office</th>-->
+<!--                        <th>Age</th>-->
+<!--                        <th>Start date</th>-->
+<!--                        <th>Salary</th>-->
+<!--                    </tr>-->
+<!--                    </thead>-->
+<!--                    <tfoot>-->
+<!--                    <tr>-->
+<!--                        <th>Name</th>-->
+<!--                        <th>Position</th>-->
+<!--                        <th>Office</th>-->
+<!--                        <th>Age</th>-->
+<!--                        <th>Start date</th>-->
+<!--                        <th>Salary</th>-->
+<!--                    </tr>-->
+<!--                    </tfoot>-->
+<!--                    <tbody>-->
+<!--                    <tr>-->
+<!--                        <td>Tiger Nixon</td>-->
+<!--                        <td>System Architect</td>-->
+<!--                        <td>Edinburgh</td>-->
+<!--                        <td>61</td>-->
+<!--                        <td>2011/04/25</td>-->
+<!--                        <td>-->
+<!--                            <button type="button" data-bs-toggle="modal"-->
+<!--                                    data-bs-target="#staticBackdropchitiet" style="border: none;">-->
+<!--                                <i class="far fa-eye" style="color:green"></i>-->
+<!--                            </button>-->
+<!--                        </td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td>Garrett Winters</td>-->
+<!--                        <td>Accountant</td>-->
+<!--                        <td>Tokyo</td>-->
+<!--                        <td>63</td>-->
+<!--                        <td>2011/07/25</td>-->
+<!--                        <td>$170,750</td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td>Ashton Cox</td>-->
+<!--                        <td>Junior Technical Author</td>-->
+<!--                        <td>San Francisco</td>-->
+<!--                        <td>66</td>-->
+<!--                        <td>2009/01/12</td>-->
+<!--                        <td>$86,000</td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td>Cedric Kelly</td>-->
+<!--                        <td>Senior Javascript Developer</td>-->
+<!--                        <td>Edinburgh</td>-->
+<!--                        <td>22</td>-->
+<!--                        <td>2012/03/29</td>-->
+<!--                        <td>$433,060</td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td>Airi Satou</td>-->
+<!--                        <td>Accountant</td>-->
+<!--                        <td>Tokyo</td>-->
+<!--                        <td>33</td>-->
+<!--                        <td>2008/11/28</td>-->
+<!--                        <td>$162,700</td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td>Brielle Williamson</td>-->
+<!--                        <td>Integration Specialist</td>-->
+<!--                        <td>New York</td>-->
+<!--                        <td>61</td>-->
+<!--                        <td>2012/12/02</td>-->
+<!--                        <td>$372,000</td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td>Herrod Chandler</td>-->
+<!--                        <td>Sales Assistant</td>-->
+<!--                        <td>San Francisco</td>-->
+<!--                        <td>59</td>-->
+<!--                        <td>2012/08/06</td>-->
+<!--                        <td>$137,500</td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td>Rhona Davidson</td>-->
+<!--                        <td>Integration Specialist</td>-->
+<!--                        <td>Tokyo</td>-->
+<!--                        <td>55</td>-->
+<!--                        <td>2010/10/14</td>-->
+<!--                        <td>$327,900</td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td>Colleen Hurst</td>-->
+<!--                        <td>Javascript Developer</td>-->
+<!--                        <td>San Francisco</td>-->
+<!--                        <td>39</td>-->
+<!--                        <td>2009/09/15</td>-->
+<!--                        <td>$205,500</td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td>Sonya Frost</td>-->
+<!--                        <td>Software Engineer</td>-->
+<!--                        <td>Edinburgh</td>-->
+<!--                        <td>23</td>-->
+<!--                        <td>2008/12/13</td>-->
+<!--                        <td>$103,600</td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td>Jena Gaines</td>-->
+<!--                        <td>Office Manager</td>-->
+<!--                        <td>London</td>-->
+<!--                        <td>30</td>-->
+<!--                        <td>2008/12/19</td>-->
+<!--                        <td>$90,560</td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td>Quinn Flynn</td>-->
+<!--                        <td>Support Lead</td>-->
+<!--                        <td>Edinburgh</td>-->
+<!--                        <td>22</td>-->
+<!--                        <td>2013/03/03</td>-->
+<!--                        <td>$342,000</td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td>Charde Marshall</td>-->
+<!--                        <td>Regional Director</td>-->
+<!--                        <td>San Francisco</td>-->
+<!--                        <td>36</td>-->
+<!--                        <td>2008/10/16</td>-->
+<!--                        <td>$470,600</td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td>Haley Kennedy</td>-->
+<!--                        <td>Senior Marketing Designer</td>-->
+<!--                        <td>London</td>-->
+<!--                        <td>43</td>-->
+<!--                        <td>2012/12/18</td>-->
+<!--                        <td>$313,500</td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td>Tatyana Fitzpatrick</td>-->
+<!--                        <td>Regional Director</td>-->
+<!--                        <td>London</td>-->
+<!--                        <td>19</td>-->
+<!--                        <td>2010/03/17</td>-->
+<!--                        <td>$385,750</td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td>Michael Silva</td>-->
+<!--                        <td>Marketing Designer</td>-->
+<!--                        <td>London</td>-->
+<!--                        <td>66</td>-->
+<!--                        <td>2012/11/27</td>-->
+<!--                        <td>$198,500</td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td>Paul Byrd</td>-->
+<!--                        <td>Chief Financial Officer (CFO)</td>-->
+<!--                        <td>New York</td>-->
+<!--                        <td>64</td>-->
+<!--                        <td>2010/06/09</td>-->
+<!--                        <td>$725,000</td>-->
+<!--                    </tr>-->
+<!--                    </tbody>-->
+<!--                </table>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash;Modal xem chi tiet&ndash;&gt;-->
+<!--    <div class="modal fade" id="staticBackdropchitiet" data-bs-backdrop="static" data-bs-keyboard="false"-->
+<!--         tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">-->
+<!--        <div class="modal-dialog modal-lg">-->
+<!--            <div class="modal-content">-->
+<!--                <div class="modal-header">-->
+<!--                    <h5 class="modal-title" id="staticBackdropLabel">Xem chi tiết </h5>-->
+<!--                    <button type="button" class="btn-close" data-bs-dismiss="modal"-->
+<!--                            aria-label="Close"></button>-->
+<!--                </div>-->
+<!--                <div class="modal-body">-->
+<!--                    <div class="input-group input-group-sm mb-3">-->
+<!--                        <div class="input-group-prepend">-->
+<!--                            <span class="input-group-text" id="inputGroup-sizing-sm">Thuộc tính 1</span>-->
+<!--                        </div>-->
+<!--                        <input type="text" class="form-control" aria-label="Small"-->
+<!--                               aria-describedby="inputGroup-sizing-sm">-->
+<!--                    </div>-->
+
+<!--                    <div class="input-group input-group-sm mb-3">-->
+<!--                        <div class="input-group-prepend">-->
+<!--                            <span class="input-group-text" id="inputGroup-sizing-sm">Thuộc tính 2</span>-->
+<!--                        </div>-->
+<!--                        <input type="text" class="form-control" aria-label="Small"-->
+<!--                               aria-describedby="inputGroup-sizing-sm">-->
+<!--                    </div>-->
+<!--                    <div class="input-group input-group-sm mb-3">-->
+<!--                        <div class="input-group-prepend">-->
+<!--                            <span class="input-group-text" id="inputGroup-sizing-sm">Thuộc tính 3</span>-->
+<!--                        </div>-->
+<!--                        <input type="text" class="form-control" aria-label="Small"-->
+<!--                               aria-describedby="inputGroup-sizing-sm">-->
+<!--                    </div>-->
+<!--                    <div class="input-group input-group-sm mb-3">-->
+<!--                        <div class="input-group-prepend">-->
+<!--                            <span class="input-group-text" id="inputGroup-sizing-sm">Thuộc tính 4</span>-->
+<!--                        </div>-->
+<!--                        <input type="text" class="form-control" aria-label="Small"-->
+<!--                               aria-describedby="inputGroup-sizing-sm">-->
+<!--                    </div>-->
+<!--                    <div class="input-group mb-3">-->
+<!--                        <div class="input-group-prepend">-->
+<!--                            <span class="input-group-text" id="inputGroup-sizing-sm">Thuộc tính 5</span>-->
+<!--                        </div>-->
+<!--                        <input type="file" class="form-control custom-file-input" id="inputGroupFile02"-->
+<!--                               aria-label="Small" aria-describedby="inputGroup-sizing-sm">-->
+<!--                        <div class="input-group-prepend">-->
+<!--                            <span class="input-group-text" id="">Upload</span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="input-group mb-3">-->
+<!--                        <div class="input-group-prepend">-->
+<!--                            <span class="input-group-text" id="inputGroup-sizing-sm">Thuộc tính 6</span>-->
+<!--                        </div>-->
+<!--                        <div class="input-group-prepend">-->
+<!--                            <button class="btn btn-outline-secondary dropdown-toggle" type="button"-->
+<!--                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--                                Dropdown-->
+<!--                            </button>-->
+<!--                            <div class="dropdown-menu">-->
+<!--                                <a class="dropdown-item" href="#">Action</a>-->
+<!--                                <a class="dropdown-item" href="#">Another action</a>-->
+<!--                                <a class="dropdown-item" href="#">Something else here</a>-->
+<!--                                <div role="separator" class="dropdown-divider"></div>-->
+<!--                                <a class="dropdown-item" href="#">Separated link</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <input type="text" class="form-control"-->
+<!--                               aria-label="Text input with dropdown button">-->
+<!--                        <div class="form-check">-->
+<!--                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="    height: 32px;-->
+<!--                                        width: 32px;-->
+<!--                                        margin-left: 5px;">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                <div class="modal-footer">-->
+<!--                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
+<!--                    <button type="button" class="btn btn-primary">Save</button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--    </div>-->
+<!--    &lt;!&ndash;End modal xem chi tiết&ndash;&gt;-->
+<!--</section>-->
+<!--</body>-->
+<!--</html>-->
+
 <!DOCTYPE html>
-<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml"
       layout:decorate="~{/admin/_layout.html}">
 <head>
     <title>Content page</title>
@@ -52,257 +361,51 @@
                 <table id="datatablesSimple">
                     <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Position</th>
-                        <th>Office</th>
-                        <th>Age</th>
-                        <th>Start date</th>
-                        <th>Salary</th>
+                        <th>ID</th>
+                        <th>Ngày lập</th>
+                        <th>Trạng thái</th>
+                        <th>Địa chỉ giao hàng</th>
+                        <th>Số điện thoại</th>
+                        <th>Email</th>
+                        <th>Thao tác</th>
                     </tr>
                     </thead>
                     <tfoot>
                     <tr>
-                        <th>Name</th>
-                        <th>Position</th>
-                        <th>Office</th>
-                        <th>Age</th>
-                        <th>Start date</th>
-                        <th>Salary</th>
+                        <th>ID</th>
+                        <th>Ngày lập</th>
+                        <th>Trạng thái</th>
+                        <th>Địa chỉ giao hàng</th>
+                        <th>Số điện thoại</th>
+                        <th>Email</th>
+                        <th>Thao tác</th>
                     </tr>
                     </tfoot>
                     <tbody>
-                    <tr>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
-                        <td>61</td>
-                        <td>2011/04/25</td>
-                        <td>
-                            <button type="button" data-bs-toggle="modal"
-                                    data-bs-target="#staticBackdropchitiet" style="border: none;">
-                                <i class="far fa-eye" style="color:green"></i>
-                            </button>
+                    <tr th:each="donhang : ${danhsachdonhang}">
+                        <td th:text="${donhang.id}"></td>
+                        <td th:text="${donhang.ngaylap}"></td>
+                        <td th:switch="${donhang.trangthai}">
+                            <span th:case="'dangxuly'">Đang xử lý</span>
+                            <span th:case="'thanhcong'">Thành công</span>
+                            <span th:case="'dahuy'">Đã hủy</span>
                         </td>
-                    </tr>
-                    <tr>
-                        <td>Garrett Winters</td>
-                        <td>Accountant</td>
-                        <td>Tokyo</td>
-                        <td>63</td>
-                        <td>2011/07/25</td>
-                        <td>$170,750</td>
-                    </tr>
-                    <tr>
-                        <td>Ashton Cox</td>
-                        <td>Junior Technical Author</td>
-                        <td>San Francisco</td>
-                        <td>66</td>
-                        <td>2009/01/12</td>
-                        <td>$86,000</td>
-                    </tr>
-                    <tr>
-                        <td>Cedric Kelly</td>
-                        <td>Senior Javascript Developer</td>
-                        <td>Edinburgh</td>
-                        <td>22</td>
-                        <td>2012/03/29</td>
-                        <td>$433,060</td>
-                    </tr>
-                    <tr>
-                        <td>Airi Satou</td>
-                        <td>Accountant</td>
-                        <td>Tokyo</td>
-                        <td>33</td>
-                        <td>2008/11/28</td>
-                        <td>$162,700</td>
-                    </tr>
-                    <tr>
-                        <td>Brielle Williamson</td>
-                        <td>Integration Specialist</td>
-                        <td>New York</td>
-                        <td>61</td>
-                        <td>2012/12/02</td>
-                        <td>$372,000</td>
-                    </tr>
-                    <tr>
-                        <td>Herrod Chandler</td>
-                        <td>Sales Assistant</td>
-                        <td>San Francisco</td>
-                        <td>59</td>
-                        <td>2012/08/06</td>
-                        <td>$137,500</td>
-                    </tr>
-                    <tr>
-                        <td>Rhona Davidson</td>
-                        <td>Integration Specialist</td>
-                        <td>Tokyo</td>
-                        <td>55</td>
-                        <td>2010/10/14</td>
-                        <td>$327,900</td>
-                    </tr>
-                    <tr>
-                        <td>Colleen Hurst</td>
-                        <td>Javascript Developer</td>
-                        <td>San Francisco</td>
-                        <td>39</td>
-                        <td>2009/09/15</td>
-                        <td>$205,500</td>
-                    </tr>
-                    <tr>
-                        <td>Sonya Frost</td>
-                        <td>Software Engineer</td>
-                        <td>Edinburgh</td>
-                        <td>23</td>
-                        <td>2008/12/13</td>
-                        <td>$103,600</td>
-                    </tr>
-                    <tr>
-                        <td>Jena Gaines</td>
-                        <td>Office Manager</td>
-                        <td>London</td>
-                        <td>30</td>
-                        <td>2008/12/19</td>
-                        <td>$90,560</td>
-                    </tr>
-                    <tr>
-                        <td>Quinn Flynn</td>
-                        <td>Support Lead</td>
-                        <td>Edinburgh</td>
-                        <td>22</td>
-                        <td>2013/03/03</td>
-                        <td>$342,000</td>
-                    </tr>
-                    <tr>
-                        <td>Charde Marshall</td>
-                        <td>Regional Director</td>
-                        <td>San Francisco</td>
-                        <td>36</td>
-                        <td>2008/10/16</td>
-                        <td>$470,600</td>
-                    </tr>
-                    <tr>
-                        <td>Haley Kennedy</td>
-                        <td>Senior Marketing Designer</td>
-                        <td>London</td>
-                        <td>43</td>
-                        <td>2012/12/18</td>
-                        <td>$313,500</td>
-                    </tr>
-                    <tr>
-                        <td>Tatyana Fitzpatrick</td>
-                        <td>Regional Director</td>
-                        <td>London</td>
-                        <td>19</td>
-                        <td>2010/03/17</td>
-                        <td>$385,750</td>
-                    </tr>
-                    <tr>
-                        <td>Michael Silva</td>
-                        <td>Marketing Designer</td>
-                        <td>London</td>
-                        <td>66</td>
-                        <td>2012/11/27</td>
-                        <td>$198,500</td>
-                    </tr>
-                    <tr>
-                        <td>Paul Byrd</td>
-                        <td>Chief Financial Officer (CFO)</td>
-                        <td>New York</td>
-                        <td>64</td>
-                        <td>2010/06/09</td>
-                        <td>$725,000</td>
-                    </tr>
+                        <td th:text="${donhang.diachigiaohang}"></td>
+                        <td th:text="${donhang.sodienthoai}"></td>
+                        <td th:text="${donhang.email}"></td>
+                        <td>
+                            <div style="width: 100px">
+                                <a th:href="@{/admin/don-hang/xem-don-hang/{id}(id=${donhang.id})}" type="button" style="border: none;">
+                                    <i class="far fa-eye" style="color: green;"></i>
+                                </a>
+                            </div>
+                        </td>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-    <!--Modal xem chi tiet-->
-    <div class="modal fade" id="staticBackdropchitiet" data-bs-backdrop="static" data-bs-keyboard="false"
-         tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Xem chi tiết </h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="input-group input-group-sm mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroup-sizing-sm">Thuộc tính 1</span>
-                        </div>
-                        <input type="text" class="form-control" aria-label="Small"
-                               aria-describedby="inputGroup-sizing-sm">
-                    </div>
 
-                    <div class="input-group input-group-sm mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroup-sizing-sm">Thuộc tính 2</span>
-                        </div>
-                        <input type="text" class="form-control" aria-label="Small"
-                               aria-describedby="inputGroup-sizing-sm">
-                    </div>
-                    <div class="input-group input-group-sm mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroup-sizing-sm">Thuộc tính 3</span>
-                        </div>
-                        <input type="text" class="form-control" aria-label="Small"
-                               aria-describedby="inputGroup-sizing-sm">
-                    </div>
-                    <div class="input-group input-group-sm mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroup-sizing-sm">Thuộc tính 4</span>
-                        </div>
-                        <input type="text" class="form-control" aria-label="Small"
-                               aria-describedby="inputGroup-sizing-sm">
-                    </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroup-sizing-sm">Thuộc tính 5</span>
-                        </div>
-                        <input type="file" class="form-control custom-file-input" id="inputGroupFile02"
-                               aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="">Upload</span>
-                        </div>
-                    </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroup-sizing-sm">Thuộc tính 6</span>
-                        </div>
-                        <div class="input-group-prepend">
-                            <button class="btn btn-outline-secondary dropdown-toggle" type="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Dropdown
-                            </button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                                <div role="separator" class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Separated link</a>
-                            </div>
-                        </div>
-                        <input type="text" class="form-control"
-                               aria-label="Text input with dropdown button">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="    height: 32px;
-                                        width: 32px;
-                                        margin-left: 5px;">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save</button>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <!--End modal xem chi tiết-->
 </section>
 </body>
 </html>

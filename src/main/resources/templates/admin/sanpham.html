@@ -1,3 +1,431 @@
+<!--&lt;!&ndash;<!DOCTYPE html>&ndash;&gt;-->
+<!--&lt;!&ndash;<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml"&ndash;&gt;-->
+<!--&lt;!&ndash;      layout:decorate="~{/admin/_layout.html}">&ndash;&gt;-->
+<!--&lt;!&ndash;<head>&ndash;&gt;-->
+<!--&lt;!&ndash;    <title>Content page</title>&ndash;&gt;-->
+<!--&lt;!&ndash;    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"&ndash;&gt;-->
+<!--&lt;!&ndash;          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">&ndash;&gt;-->
+<!--&lt;!&ndash;</head>&ndash;&gt;-->
+<!--&lt;!&ndash;<body>&ndash;&gt;-->
+<!--&lt;!&ndash;<section layout:fragment="sanpham">&ndash;&gt;-->
+<!--&lt;!&ndash;    &lt;!&ndash;    <img src="/image_upload/TKB.png" alt="safdddddddddddddddddddddddddd">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    <div class="container-fluid px-4">&ndash;&gt;-->
+<!--&lt;!&ndash;        <h1 class="mt-4">Sản phẩm</h1>&ndash;&gt;-->
+<!--&lt;!&ndash;        <ol class="breadcrumb mb-4">&ndash;&gt;-->
+<!--&lt;!&ndash;            <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;            <li class="breadcrumb-item active">Quản lý sản phẩm</li>&ndash;&gt;-->
+<!--&lt;!&ndash;        </ol>&ndash;&gt;-->
+
+<!--&lt;!&ndash;        &lt;!&ndash; Button trigger modal &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        th:href="@{/admin/san-pham/them-moi-san-pham"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        <button  th:href="@{/admin/san-pham/them-moi-san-pham}" type="button" class="btn btn-primary" data-bs-toggle="modal"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                 style="margin-bottom: 10px;">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            Thêm mới&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        </button>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;        <a th:href="@{/admin/san-pham/them-moi-san-pham}" type="button" class="btn btn-primary" style="margin-bottom: 10px; border: none" >&ndash;&gt;-->
+<!--&lt;!&ndash;            Thêm mới&ndash;&gt;-->
+<!--&lt;!&ndash;        </a>&ndash;&gt;-->
+
+<!--&lt;!&ndash;        &lt;!&ndash; Modal &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"&ndash;&gt;-->
+<!--&lt;!&ndash;             tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="modal-dialog modal-lg">&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="modal-content">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <div class="modal-header">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <h5 class="modal-title" id="staticBackdropLabel">Thêm mới sản phẩm</h5>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <button type="button" class="btn-close" data-bs-dismiss="modal"&ndash;&gt;-->
+<!--&lt;!&ndash;                                aria-label="Close"></button>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    <form th:action="@{/admin/san-pham/them-moi-san-pham}" method="post" enctype="multipart/form-data">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <div class="modal-body">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <div class="input-group input-group-sm mb-3">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <div class="input-group-prepend col-sm-3">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <span class="input-group-text" id="inputGroup-sizing-sm">Tên sản phẩm</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <input type="text" class="form-control col-sm-9" aria-label="Small"&ndash;&gt;-->
+<!--&lt;!&ndash;                                       aria-describedby="inputGroup-sizing-sm" name="tensanpham">&ndash;&gt;-->
+<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <div class="input-group input-group-sm mb-3">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <div class="input-group-prepend">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <span class="input-group-text col-sm-3" id="inputGroup-sizing-sm">Giá bán</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <input type="number" class="form-control col-sm-9" aria-label="Small"&ndash;&gt;-->
+<!--&lt;!&ndash;                                       aria-describedby="inputGroup-sizing-sm" name="giaban">&ndash;&gt;-->
+<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <div class="input-group input-group-sm mb-3">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <div class="input-group-prepend ">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <span class="input-group-text col-sm-3" id="inputGroup-sizing-sm">Giới tính</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <select class="form-select col-sm-9" aria-label="Default select example"&ndash;&gt;-->
+<!--&lt;!&ndash;                                        name="gioitinh">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <option selected value="">Lựa chọn giới tính</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <option value="Nam">Nam</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <option value="Nữ">Nữ</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <option value="Unisex">Unisex</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </select>&ndash;&gt;-->
+<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                            &lt;!&ndash;                            <div class="input-group mb-3">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                <div class="input-group-prepend">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                    <span class="input-group-text" id="inputGroup-sizing-sm">Ảnh chính</span>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                <input type="file" class="form-control custom-file-input" id="inputGroupFile02"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                       aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="anhchinh">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                <div class="input-group-prepend">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                    <span class="input-group-text" id="">Upload</span>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                            </div>&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;                            &lt;!&ndash;                        <div class="input-group mb-3">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                            <div class="input-group-prepend">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                <span class="input-group-text" id="inputGroup-sizing-sm">Giới tính</span>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                            </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                            <div class="input-group-prepend">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                <button class="btn btn-outline-secondary dropdown-toggle" type="button"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                    Dropdown&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                </button>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                <div class="dropdown-menu">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                    <a class="dropdown-item" href="#">Action</a>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                    <a class="dropdown-item" href="#">Another action</a>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                    <a class="dropdown-item" href="#">Something else here</a>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                    <div role="separator" class="dropdown-divider"></div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                    <a class="dropdown-item" href="#">Separated link</a>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                            </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                            <input type="text" class="form-control"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                   aria-label="Text input with dropdown button">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                        </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                        <div class="input-group input-group-sm mb-3">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                            <div class="input-group-prepend">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                <span class="input-group-text" id="inputGroup-sizing-sm">Số lượng</span>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                            </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                            <input type="text" class="form-control" aria-label="Small"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                   aria-describedby="inputGroup-sizing-sm">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                        </div>&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;                            &lt;!&ndash;                        <div class="input-group mb-3">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                            <div class="input-group-prepend">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                <span class="input-group-text" id="inputGroup-sizing-sm">Ảnh phụ 1</span>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                            </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                            <input type="file" class="form-control custom-file-input" id="inputGroupFile02"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                   aria-label="Small" aria-describedby="inputGroup-sizing-sm">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                            <div class="input-group-prepend">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                <span class="input-group-text" id="">Upload</span>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                            </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                        </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                        <div class="input-group mb-3">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                            <div class="input-group-prepend">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                <span class="input-group-text" id="inputGroup-sizing-sm">Ảnh phụ 2</span>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                            </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                            <input type="file" class="form-control custom-file-input" id="inputGroupFile02"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                   aria-label="Small" aria-describedby="inputGroup-sizing-sm">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                            <div class="input-group-prepend">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                <span class="input-group-text" id="">Upload</span>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                            </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                        </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                        <div class="input-group mb-3">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                            <div class="input-group-prepend">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                <span class="input-group-text" id="inputGroup-sizing-sm">Ảnh phụ 3</span>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                            </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                            <input type="file" class="form-control custom-file-input" id="inputGroupFile02"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                   aria-label="Small" aria-describedby="inputGroup-sizing-sm">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                            <div class="input-group-prepend">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                <span class="input-group-text" id="">Upload</span>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                            </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                        </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                        <div class="input-group input-group-sm mb-3">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                            <div class="input-group-prepend">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                <span class="input-group-text" id="inputGroup-sizing-sm">Mô tả</span>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                            </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                            <input type="text" class="form-control" aria-label="Small"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                   aria-describedby="inputGroup-sizing-sm">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                        </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                        <div class="input-group mb-3">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                            <div class="input-group-prepend">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                <span class="input-group-text" id="inputGroup-sizing-sm">Thương hiệu</span>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                            </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                            <div class="input-group-prepend">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                <button class="btn btn-outline-secondary dropdown-toggle" type="button"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                    Dropdown&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                </button>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                <div class="dropdown-menu">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                    <a class="dropdown-item" href="#">Action</a>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                    <a class="dropdown-item" href="#">Another action</a>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                    <a class="dropdown-item" href="#">Something else here</a>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                    <div role="separator" class="dropdown-divider"></div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                    <a class="dropdown-item" href="#">Separated link</a>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                            </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                            <input type="text" class="form-control"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                   aria-label="Text input with dropdown button">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                        </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                        <div class="input-group mb-3">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                            <div class="input-group-prepend">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                <span class="input-group-text" id="inputGroup-sizing-sm">Danh mục</span>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                            </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                            <div class="input-group-prepend">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                <button class="btn btn-outline-secondary dropdown-toggle" type="button"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                    Dropdown&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                </button>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                <div class="dropdown-menu">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                    <a class="dropdown-item" href="#">Action</a>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                    <a class="dropdown-item" href="#">Another action</a>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                    <a class="dropdown-item" href="#">Something else here</a>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                    <div role="separator" class="dropdown-divider"></div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                    <a class="dropdown-item" href="#">Separated link</a>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                            </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                            <input type="text" class="form-control"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                                   aria-label="Text input with dropdown button">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                        </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                        <div class="modal-footer">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <button type="button" class="btn btn-secondary"&ndash;&gt;-->
+<!--&lt;!&ndash;                                    data-bs-dismiss="modal">Close&ndash;&gt;-->
+<!--&lt;!&ndash;                            </button>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <input type="submit" class="btn btn-primary" value="Save">&ndash;&gt;-->
+<!--&lt;!&ndash;                            &lt;!&ndash;                            <button type="button" class="btn btn-primary">Save</button>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </form>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        &lt;!&ndash;End Modal&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <div class="card mb-4">&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="card-header">&ndash;&gt;-->
+<!--&lt;!&ndash;                <i class="fas fa-table me-1"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;                DataTable Example&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="card-body">&ndash;&gt;-->
+<!--&lt;!&ndash;                <table id="datatablesSimple">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <thead>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <tr>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <th>ID</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <th>Tên sản phẩm</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <th>Giá bán</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <th>Ảnh</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <th>Số lượng</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <th>Giới tính</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <th></th>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </tr>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </thead>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <tfoot>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <tr>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <th>ID</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <th>Tên sản phẩm</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <th>Giá bán</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <th>Ảnh</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <th>Số lượng</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <th>Giới tính</th>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <th></th>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </tr>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </tfoot>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <tbody>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <tr th:each="sanpham : ${danhsachsanpham}">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <td th:text="${sanpham.id}"></td>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <td th:text="${sanpham.tensanpham}"></td>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <td th:text="${sanpham.giaban}"></td>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <td>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <img th:src="${sanpham.anhchinh}" alt="ảnh sản phẩm" style="width: 50px; height: 70px;">&ndash;&gt;-->
+<!--&lt;!&ndash;                        </td>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <td th:text="${sanpham.tongsoluong}"></td>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <td th:text="${sanpham.gioitinh}"></td>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <td>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <div style="width: 100px">&ndash;&gt;-->
+<!--&lt;!&ndash;                                &lt;!&ndash;                                <a th:href="@{/admin/san-pham/xoa-san-pham/{id}(id=${sanpham.id})}">Xoa</a>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                                <a th:href="@{/admin/san-pham/xem-san-pham/{id}(id=${sanpham.id})}" type="button" style="border: none;">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <i class="far fa-eye" style="color: green;"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <a th:href="@{/admin/san-pham/sua-san-pham/{id}(id=${sanpham.id})}" type="button" style="border: none;">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <i class="far fa-edit" style="color: blue;"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <a th:href="@{/admin/san-pham/xoa-san-pham/{id}(id=${sanpham.id})}" type="button"&ndash;&gt;-->
+<!--&lt;!&ndash;                                   style="border: none;">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <i class="far fa-trash-alt" style="color: #ff0000;"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </td>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </tr>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    </tbody>&ndash;&gt;-->
+<!--&lt;!&ndash;                </table>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;</section>&ndash;&gt;-->
+<!--&lt;!&ndash;<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"&ndash;&gt;-->
+<!--&lt;!&ndash;        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"&ndash;&gt;-->
+<!--&lt;!&ndash;        crossorigin="anonymous"></script>&ndash;&gt;-->
+
+<!--&lt;!&ndash;</body>&ndash;&gt;-->
+<!--&lt;!&ndash;</html>&ndash;&gt;-->
+
+
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml"-->
+<!--      layout:decorate="~{/admin/_layout.html}">-->
+<!--<head>-->
+<!--    <title>Content page</title>-->
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"-->
+<!--          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">-->
+<!--</head>-->
+<!--<body>-->
+<!--<section layout:fragment="sanpham">-->
+<!--    &lt;!&ndash;    <img src="/image_upload/TKB.png" alt="safdddddddddddddddddddddddddd">&ndash;&gt;-->
+<!--    <div class="container-fluid px-4">-->
+<!--        <h1 class="mt-4">Sản phẩm</h1>-->
+<!--        <ol class="breadcrumb mb-4">-->
+<!--            <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>-->
+<!--            <li class="breadcrumb-item active">Quản lý sản phẩm</li>-->
+<!--        </ol>-->
+
+<!--        &lt;!&ndash; Button trigger modal &ndash;&gt;-->
+<!--        &lt;!&ndash;        th:href="@{/admin/san-pham/them-moi-san-pham"&ndash;&gt;-->
+<!--        &lt;!&ndash;        <button  th:href="@{/admin/san-pham/them-moi-san-pham}" type="button" class="btn btn-primary" data-bs-toggle="modal"&ndash;&gt;-->
+<!--        &lt;!&ndash;                 style="margin-bottom: 10px;">&ndash;&gt;-->
+<!--        &lt;!&ndash;            Thêm mới&ndash;&gt;-->
+<!--        &lt;!&ndash;        </button>&ndash;&gt;-->
+<!--        <a th:href="@{/admin/san-pham/them-moi-san-pham}" type="button" class="btn btn-primary" style="margin-bottom: 10px; border: none" >-->
+<!--            Thêm mới-->
+<!--        </a>-->
+
+<!--        &lt;!&ndash; Modal &ndash;&gt;-->
+<!--        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"-->
+<!--             tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">-->
+<!--            <div class="modal-dialog modal-lg">-->
+<!--                <div class="modal-content">-->
+<!--                    <div class="modal-header">-->
+<!--                        <h5 class="modal-title" id="staticBackdropLabel">Thêm mới sản phẩm</h5>-->
+<!--                        <button type="button" class="btn-close" data-bs-dismiss="modal"-->
+<!--                                aria-label="Close"></button>-->
+<!--                    </div>-->
+
+<!--                    <form th:action="@{/admin/san-pham/them-moi-san-pham}" method="post" enctype="multipart/form-data">-->
+<!--                        <div class="modal-body">-->
+<!--                            <div class="input-group input-group-sm mb-3">-->
+<!--                                <div class="input-group-prepend col-sm-3">-->
+<!--                                    <span class="input-group-text" id="inputGroup-sizing-sm">Tên sản phẩm</span>-->
+<!--                                </div>-->
+<!--                                <input type="text" class="form-control col-sm-9" aria-label="Small"-->
+<!--                                       aria-describedby="inputGroup-sizing-sm" name="tensanpham">-->
+<!--                            </div>-->
+<!--                            <div class="input-group input-group-sm mb-3">-->
+<!--                                <div class="input-group-prepend">-->
+<!--                                    <span class="input-group-text col-sm-3" id="inputGroup-sizing-sm">Giá bán</span>-->
+<!--                                </div>-->
+<!--                                <input type="number" class="form-control col-sm-9" aria-label="Small"-->
+<!--                                       aria-describedby="inputGroup-sizing-sm" name="giaban">-->
+<!--                            </div>-->
+<!--                            <div class="input-group input-group-sm mb-3">-->
+<!--                                <div class="input-group-prepend ">-->
+<!--                                    <span class="input-group-text col-sm-3" id="inputGroup-sizing-sm">Giới tính</span>-->
+<!--                                </div>-->
+<!--                                <select class="form-select col-sm-9" aria-label="Default select example"-->
+<!--                                        name="gioitinh">-->
+<!--                                    <option selected value="">Lựa chọn giới tính</option>-->
+<!--                                    <option value="Nam">Nam</option>-->
+<!--                                    <option value="Nữ">Nữ</option>-->
+<!--                                    <option value="Unisex">Unisex</option>-->
+<!--                                </select>-->
+<!--                            </div>-->
+
+
+<!--                        </div>-->
+
+<!--                        <div class="modal-footer">-->
+<!--                            <button type="button" class="btn btn-secondary"-->
+<!--                                    data-bs-dismiss="modal">Close-->
+<!--                            </button>-->
+<!--                            <input type="submit" class="btn btn-primary" value="Save">-->
+<!--                            &lt;!&ndash;                            <button type="button" class="btn btn-primary">Save</button>&ndash;&gt;-->
+<!--                        </div>-->
+<!--                    </form>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--        </div>-->
+<!--        &lt;!&ndash;End Modal&ndash;&gt;-->
+
+<!--        <div class="card mb-4">-->
+<!--            <div class="card-header">-->
+<!--                <i class="fas fa-table me-1"></i>-->
+<!--                DataTable Example-->
+<!--            </div>-->
+<!--            <div class="card-body">-->
+<!--                <table id="datatablesSimple">-->
+<!--                    <thead>-->
+<!--                    <tr>-->
+<!--                        <th>ID</th>-->
+<!--                        <th>Tên sản phẩm</th>-->
+<!--                        <th>Giá bán</th>-->
+<!--                        <th>Ảnh</th>-->
+<!--                        <th>Số lượng</th>-->
+<!--                        <th>Giới tính</th>-->
+<!--                        <th></th>-->
+<!--                    </tr>-->
+<!--                    </thead>-->
+<!--                    <tfoot>-->
+<!--                    <tr>-->
+<!--                        <th>ID</th>-->
+<!--                        <th>Tên sản phẩm</th>-->
+<!--                        <th>Giá bán</th>-->
+<!--                        <th>Ảnh</th>-->
+<!--                        <th>Số lượng</th>-->
+<!--                        <th>Giới tính</th>-->
+<!--                        <th></th>-->
+<!--                    </tr>-->
+<!--                    </tfoot>-->
+<!--                    <tbody>-->
+<!--                    <tr th:each="sanpham : ${danhsachsanpham}"th:if="${sanpham.isDelete==false}">-->
+<!--                        <td th:text="${sanpham.id}"></td>-->
+<!--                        <td th:text="${sanpham.tensanpham}"></td>-->
+<!--                        <td th:text="${sanpham.giaban}"></td>-->
+<!--                        <td>-->
+<!--                            <img th:src="${sanpham.anhchinh}" alt="ảnh sản phẩm" style="width: 50px; height: 70px;">-->
+<!--                        </td>-->
+<!--                        <td th:text="${sanpham.tongsoluong}"></td>-->
+<!--                        <td th:text="${sanpham.gioitinh}"></td>-->
+<!--                        <td>-->
+<!--                            <div style="width: 100px">-->
+<!--                                &lt;!&ndash;                                <a th:href="@{/admin/san-pham/xoa-san-pham/{id}(id=${sanpham.id})}">Xoa</a>&ndash;&gt;-->
+<!--                                <a th:href="@{/admin/san-pham/xem-san-pham/{id}(id=${sanpham.id})}" type="button" style="border: none;">-->
+<!--                                    <i class="far fa-eye" style="color: green;"></i>-->
+<!--                                </a>-->
+<!--                                <a th:href="@{/admin/san-pham/sua-san-pham/{id}(id=${sanpham.id})}" type="button" style="border: none;">-->
+<!--                                    <i class="far fa-edit" style="color: blue;"></i>-->
+<!--                                </a>-->
+<!--                                <a th:href="@{/admin/san-pham/xoa-san-pham/{id}(id=${sanpham.id})}" type="button"-->
+<!--                                   style="border: none;">-->
+<!--                                    <i class="far fa-trash-alt" style="color: #ff0000;"></i>-->
+<!--                                </a>-->
+<!--                            </div>-->
+<!--                        </td>-->
+<!--                    </tr>-->
+
+<!--                    </tbody>-->
+<!--                </table>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--    </div>-->
+<!--</section>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"-->
+<!--        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"-->
+<!--        crossorigin="anonymous"></script>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
 <!DOCTYPE html>
 <html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml"
       layout:decorate="~{/admin/_layout.html}">
@@ -17,11 +445,11 @@
         </ol>
 
         <!-- Button trigger modal -->
-<!--        th:href="@{/admin/san-pham/them-moi-san-pham"-->
-<!--        <button  th:href="@{/admin/san-pham/them-moi-san-pham}" type="button" class="btn btn-primary" data-bs-toggle="modal"-->
-<!--                 style="margin-bottom: 10px;">-->
-<!--            Thêm mới-->
-<!--        </button>-->
+        <!--        th:href="@{/admin/san-pham/them-moi-san-pham"-->
+        <!--        <button  th:href="@{/admin/san-pham/them-moi-san-pham}" type="button" class="btn btn-primary" data-bs-toggle="modal"-->
+        <!--                 style="margin-bottom: 10px;">-->
+        <!--            Thêm mới-->
+        <!--        </button>-->
         <a th:href="@{/admin/san-pham/them-moi-san-pham}" type="button" class="btn btn-primary" style="margin-bottom: 10px; border: none" >
             Thêm mới
         </a>
@@ -60,129 +488,12 @@
                                 <select class="form-select col-sm-9" aria-label="Default select example"
                                         name="gioitinh">
                                     <option selected value="">Lựa chọn giới tính</option>
-                                    <option value="Nam">Nam</option>
-                                    <option value="Nữ">Nữ</option>
-                                    <option value="Unisex">Unisex</option>
+                                    <option value="nam">Nam</option>
+                                    <option value="nu">Nữ</option>
                                 </select>
                             </div>
 
-                            <!--                            <div class="input-group mb-3">-->
-                            <!--                                <div class="input-group-prepend">-->
-                            <!--                                    <span class="input-group-text" id="inputGroup-sizing-sm">Ảnh chính</span>-->
-                            <!--                                </div>-->
-                            <!--                                <input type="file" class="form-control custom-file-input" id="inputGroupFile02"-->
-                            <!--                                       aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="anhchinh">-->
-                            <!--                                <div class="input-group-prepend">-->
-                            <!--                                    <span class="input-group-text" id="">Upload</span>-->
-                            <!--                                </div>-->
-                            <!--                            </div>-->
 
-                            <!--                        <div class="input-group mb-3">-->
-                            <!--                            <div class="input-group-prepend">-->
-                            <!--                                <span class="input-group-text" id="inputGroup-sizing-sm">Giới tính</span>-->
-                            <!--                            </div>-->
-                            <!--                            <div class="input-group-prepend">-->
-                            <!--                                <button class="btn btn-outline-secondary dropdown-toggle" type="button"-->
-                            <!--                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-                            <!--                                    Dropdown-->
-                            <!--                                </button>-->
-                            <!--                                <div class="dropdown-menu">-->
-                            <!--                                    <a class="dropdown-item" href="#">Action</a>-->
-                            <!--                                    <a class="dropdown-item" href="#">Another action</a>-->
-                            <!--                                    <a class="dropdown-item" href="#">Something else here</a>-->
-                            <!--                                    <div role="separator" class="dropdown-divider"></div>-->
-                            <!--                                    <a class="dropdown-item" href="#">Separated link</a>-->
-                            <!--                                </div>-->
-                            <!--                            </div>-->
-                            <!--                            <input type="text" class="form-control"-->
-                            <!--                                   aria-label="Text input with dropdown button">-->
-                            <!--                        </div>-->
-                            <!--
-                            <!--                        <div class="input-group input-group-sm mb-3">-->
-                            <!--                            <div class="input-group-prepend">-->
-                            <!--                                <span class="input-group-text" id="inputGroup-sizing-sm">Số lượng</span>-->
-                            <!--                            </div>-->
-                            <!--                            <input type="text" class="form-control" aria-label="Small"-->
-                            <!--                                   aria-describedby="inputGroup-sizing-sm">-->
-                            <!--                        </div>-->
-
-                            <!--                        <div class="input-group mb-3">-->
-                            <!--                            <div class="input-group-prepend">-->
-                            <!--                                <span class="input-group-text" id="inputGroup-sizing-sm">Ảnh phụ 1</span>-->
-                            <!--                            </div>-->
-                            <!--                            <input type="file" class="form-control custom-file-input" id="inputGroupFile02"-->
-                            <!--                                   aria-label="Small" aria-describedby="inputGroup-sizing-sm">-->
-                            <!--                            <div class="input-group-prepend">-->
-                            <!--                                <span class="input-group-text" id="">Upload</span>-->
-                            <!--                            </div>-->
-                            <!--                        </div>-->
-                            <!--                        <div class="input-group mb-3">-->
-                            <!--                            <div class="input-group-prepend">-->
-                            <!--                                <span class="input-group-text" id="inputGroup-sizing-sm">Ảnh phụ 2</span>-->
-                            <!--                            </div>-->
-                            <!--                            <input type="file" class="form-control custom-file-input" id="inputGroupFile02"-->
-                            <!--                                   aria-label="Small" aria-describedby="inputGroup-sizing-sm">-->
-                            <!--                            <div class="input-group-prepend">-->
-                            <!--                                <span class="input-group-text" id="">Upload</span>-->
-                            <!--                            </div>-->
-                            <!--                        </div>-->
-                            <!--                        <div class="input-group mb-3">-->
-                            <!--                            <div class="input-group-prepend">-->
-                            <!--                                <span class="input-group-text" id="inputGroup-sizing-sm">Ảnh phụ 3</span>-->
-                            <!--                            </div>-->
-                            <!--                            <input type="file" class="form-control custom-file-input" id="inputGroupFile02"-->
-                            <!--                                   aria-label="Small" aria-describedby="inputGroup-sizing-sm">-->
-                            <!--                            <div class="input-group-prepend">-->
-                            <!--                                <span class="input-group-text" id="">Upload</span>-->
-                            <!--                            </div>-->
-                            <!--                        </div>-->
-                            <!--                        <div class="input-group input-group-sm mb-3">-->
-                            <!--                            <div class="input-group-prepend">-->
-                            <!--                                <span class="input-group-text" id="inputGroup-sizing-sm">Mô tả</span>-->
-                            <!--                            </div>-->
-                            <!--                            <input type="text" class="form-control" aria-label="Small"-->
-                            <!--                                   aria-describedby="inputGroup-sizing-sm">-->
-                            <!--                        </div>-->
-                            <!--                        <div class="input-group mb-3">-->
-                            <!--                            <div class="input-group-prepend">-->
-                            <!--                                <span class="input-group-text" id="inputGroup-sizing-sm">Thương hiệu</span>-->
-                            <!--                            </div>-->
-                            <!--                            <div class="input-group-prepend">-->
-                            <!--                                <button class="btn btn-outline-secondary dropdown-toggle" type="button"-->
-                            <!--                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-                            <!--                                    Dropdown-->
-                            <!--                                </button>-->
-                            <!--                                <div class="dropdown-menu">-->
-                            <!--                                    <a class="dropdown-item" href="#">Action</a>-->
-                            <!--                                    <a class="dropdown-item" href="#">Another action</a>-->
-                            <!--                                    <a class="dropdown-item" href="#">Something else here</a>-->
-                            <!--                                    <div role="separator" class="dropdown-divider"></div>-->
-                            <!--                                    <a class="dropdown-item" href="#">Separated link</a>-->
-                            <!--                                </div>-->
-                            <!--                            </div>-->
-                            <!--                            <input type="text" class="form-control"-->
-                            <!--                                   aria-label="Text input with dropdown button">-->
-                            <!--                        </div>-->
-                            <!--                        <div class="input-group mb-3">-->
-                            <!--                            <div class="input-group-prepend">-->
-                            <!--                                <span class="input-group-text" id="inputGroup-sizing-sm">Danh mục</span>-->
-                            <!--                            </div>-->
-                            <!--                            <div class="input-group-prepend">-->
-                            <!--                                <button class="btn btn-outline-secondary dropdown-toggle" type="button"-->
-                            <!--                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-                            <!--                                    Dropdown-->
-                            <!--                                </button>-->
-                            <!--                                <div class="dropdown-menu">-->
-                            <!--                                    <a class="dropdown-item" href="#">Action</a>-->
-                            <!--                                    <a class="dropdown-item" href="#">Another action</a>-->
-                            <!--                                    <a class="dropdown-item" href="#">Something else here</a>-->
-                            <!--                                    <div role="separator" class="dropdown-divider"></div>-->
-                            <!--                                    <a class="dropdown-item" href="#">Separated link</a>-->
-                            <!--                                </div>-->
-                            <!--                            </div>-->
-                            <!--                            <input type="text" class="form-control"-->
-                            <!--                                   aria-label="Text input with dropdown button">-->
-                            <!--                        </div>-->
                         </div>
 
                         <div class="modal-footer">
@@ -229,7 +540,7 @@
                     </tr>
                     </tfoot>
                     <tbody>
-                    <tr th:each="sanpham : ${danhsachsanpham}">
+                    <tr th:each="sanpham : ${danhsachsanpham}"th:if="${sanpham.isDelete==false}">
                         <td th:text="${sanpham.id}"></td>
                         <td th:text="${sanpham.tensanpham}"></td>
                         <td th:text="${sanpham.giaban}"></td>

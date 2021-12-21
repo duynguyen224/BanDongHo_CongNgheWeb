@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -27,6 +28,7 @@ public class DonHang {
     private String sodienthoai;
     private String tenkhachhang;
     private String email;
+    private BigDecimal tongtien;
 
     @OneToMany(mappedBy = "donhang")
     private List<ChiTietDonHang> chitietdonhangs;

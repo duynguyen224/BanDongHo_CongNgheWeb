@@ -18,26 +18,13 @@ import java.util.List;
 @Table(name = "danhmuc")
 
 public class DanhMuc {
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    private Long id;
-//    private String slug;
-//    private String tendanhmuc;
-//
-//    @OneToMany(mappedBy = "danhmuc")
-//    private List<SanPham> sanphams;
-//
-//    public void setSlug(String slug) {
-//        this.slug = Slug.toSlug(slug);
-//    }
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String slug;
     private String tendanhmuc;
     private String mota;
-    private Boolean isDelete=false;
+    private Boolean isDelete = false;
 
     @OneToMany(mappedBy = "danhmuc")
     private List<SanPham> sanphams;

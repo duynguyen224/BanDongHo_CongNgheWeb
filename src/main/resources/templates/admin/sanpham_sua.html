@@ -1,3 +1,275 @@
+<!--&lt;!&ndash;<!DOCTYPE html>&ndash;&gt;-->
+<!--&lt;!&ndash;<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml"&ndash;&gt;-->
+<!--&lt;!&ndash;      layout:decorate="~{/admin/_layout.html}">&ndash;&gt;-->
+<!--&lt;!&ndash;<head>&ndash;&gt;-->
+<!--&lt;!&ndash;    <title>Content page</title>&ndash;&gt;-->
+<!--&lt;!&ndash;    &lt;!&ndash;    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    &lt;!&ndash;    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script></head>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"&ndash;&gt;-->
+<!--&lt;!&ndash;          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">&ndash;&gt;-->
+<!--&lt;!&ndash;    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"&ndash;&gt;-->
+<!--&lt;!&ndash;            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"&ndash;&gt;-->
+<!--&lt;!&ndash;            crossorigin="anonymous"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;</head>&ndash;&gt;-->
+<!--&lt;!&ndash;<body>&ndash;&gt;-->
+<!--&lt;!&ndash;<section layout:fragment="sanpham_sua">&ndash;&gt;-->
+<!--&lt;!&ndash;    <div class="modal-body col-md-8 col-md-offset-4">&ndash;&gt;-->
+<!--&lt;!&ndash;        <div class="input-group input-group-sm mb-3" style="text-align: center">&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="input-group-prepend col-sm-12">&ndash;&gt;-->
+<!--&lt;!&ndash;                <span class="input-group-text" id="inputGroup-sizing-sm">PRODUCT</span>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <form th:action="@{/admin/san-pham/sua-san-pham/{id}(id=${sanpham.id})}" th:object="${sanpham}" method="post">&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;            <div class="input-group input-group-sm mb-3">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;                <div class="input-group-prepend col-sm-3">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;                    <span class="input-group-text" id="inputGroup-sizing-sm">Tên sản phẩm</span>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;                </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;                <input type="text" class="form-control col-sm-9" aria-label="Small"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;                       aria-describedby="inputGroup-sizing-sm"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;                       name="tensanpham"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;                       th:field="*{tensanpham}"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;                />&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;            </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;            <div class="input-group input-group-sm mb-3">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;                <div class="input-group-prepend col-sm-3">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;                    <span class="input-group-text" id="inputGroup-sizing-sm">Giá bán</span>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;                </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;                <input type="number" class="form-control col-sm-9" aria-label="Small"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;                       aria-describedby="inputGroup-sizing-sm"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;                       name="giaban"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;                        th:field="*{giaban}"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;                />&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;            </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;            <div class="input-group input-group-sm mb-3">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;                <div class="input-group-prepend col-sm-3">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;                    <span class="input-group-text" id="inputGroup-sizing-sm">Giới tính</span>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;                </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;                <select th:field="*{gioitinh}" class="form-select col-sm-9" aria-label="Default select example" name="gioitinh">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;&lt;!&ndash;                    <option value="">Lựa chọn giới tính</option>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;                    <option selected value="Nam">Nam</option>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;                    <option value="Nữ">Nữ</option>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;                    <option value="Unisex">Unisex</option>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;                    </select>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;                </select>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;            </div>&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;            &lt;!&ndash;&lt;!&ndash;            <div class="input-group mb-3">&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;&lt;!&ndash;                <div class="input-group-prepend col-sm-3">&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;&lt;!&ndash;                    <span class="input-group-text" id="inputGroup-sizing-sm">Mô tả</span>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;&lt;!&ndash;                </div>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;&lt;!&ndash;                <textarea class="form-control col-sm-9" id="exampleFormControlTextarea4" rows="3"&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;&lt;!&ndash;                ></textarea>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;&lt;!&ndash;            </div>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;            &lt;!&ndash;&lt;!&ndash;            <div class="input-group mb-3">&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;&lt;!&ndash;                <div class="input-group-prepend col-sm-3">&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;&lt;!&ndash;                    <span class="input-group-text" id="inputGroup-sizing-sm">Ảnh chính</span>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;&lt;!&ndash;                </div>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;&lt;!&ndash;                <input type="file" class="form-control custom-file-input col-sm-9" id="inputGroupFile02"&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;&lt;!&ndash;                       aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="anhchinh"/>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash;&lt;!&ndash;            </div>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="input-group input-group-sm mb-3">&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="input-group-prepend col-sm-3">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <span class="input-group-text" id="inputGroup-sizing-sm">Tên sản phẩm</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                <input type="text" class="form-control col-sm-9" aria-label="Small"&ndash;&gt;-->
+<!--&lt;!&ndash;                       aria-describedby="inputGroup-sizing-sm"&ndash;&gt;-->
+<!--&lt;!&ndash;                       name="tensanpham"&ndash;&gt;-->
+<!--&lt;!&ndash;                       th:field="*{tensanpham}"&ndash;&gt;-->
+<!--&lt;!&ndash;                />&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="input-group input-group-sm mb-3">&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="input-group-prepend col-sm-3">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <span class="input-group-text" id="inputGroup-sizing-sm">Giá bán</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                <input type="number" class="form-control col-sm-9" aria-label="Small"&ndash;&gt;-->
+<!--&lt;!&ndash;                       aria-describedby="inputGroup-sizing-sm"&ndash;&gt;-->
+<!--&lt;!&ndash;                       name="giaban"&ndash;&gt;-->
+<!--&lt;!&ndash;                       th:field="*{giaban}"&ndash;&gt;-->
+<!--&lt;!&ndash;                />&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="input-group input-group-sm mb-3">&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="input-group-prepend col-sm-3">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <span class="input-group-text" id="inputGroup-sizing-sm">Số lượng</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                <input type="number" class="form-control col-sm-9" aria-label="Small"&ndash;&gt;-->
+<!--&lt;!&ndash;                       aria-describedby="inputGroup-sizing-sm"&ndash;&gt;-->
+<!--&lt;!&ndash;                       name="tongsoluong"&ndash;&gt;-->
+<!--&lt;!&ndash;                       th:field="*{tongsoluong}"&ndash;&gt;-->
+<!--&lt;!&ndash;                />&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="input-group input-group-sm mb-3">&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="input-group-prepend col-sm-3">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <span class="input-group-text" id="inputGroup-sizing-sm">Giới tính</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                <select th:field="*{gioitinh}" class="form-select col-sm-9" aria-label="Default select example"&ndash;&gt;-->
+<!--&lt;!&ndash;                        name="gioitinh">&ndash;&gt;-->
+<!--&lt;!&ndash;                    &lt;!&ndash;                    <option value="">Lựa chọn giới tính</option>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                    <option selected value="Nam">Nam</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <option value="Nữ">Nữ</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <option value="Unisex">Unisex</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                </select>&ndash;&gt;-->
+<!--&lt;!&ndash;                </select>&ndash;&gt;-->
+
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="input-group mb-3">&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="input-group-prepend col-sm-3">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <span class="input-group-text" id="inputGroup-sizing-sm">Mô tả</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                <textarea class="form-control col-sm-9" id="exampleFormControlTextarea4" rows="3"&ndash;&gt;-->
+<!--&lt;!&ndash;                          name="mota" th:field="*{mota}"></textarea>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="input-group mb-3">&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="input-group-prepend col-sm-3">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <span class="input-group-text" id="inputGroup-sizing-sm">Ảnh chính</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                <img th:src="*{anhchinh}" alt="Ảnh sản phẩm" style="width:150px; height:150px">&ndash;&gt;-->
+<!--&lt;!&ndash;                <input type="file" class="form-control custom-file-input col-sm-9" id="inputGroupFile02"&ndash;&gt;-->
+<!--&lt;!&ndash;                       aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="anhchinh"&ndash;&gt;-->
+<!--&lt;!&ndash;                       th:field="*{anhchinh}"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            <a th:href="@{/admin/san-pham}" type="button" class="btn btn-secondary"&ndash;&gt;-->
+<!--&lt;!&ndash;               style="margin-bottom: 10px; border: none">&ndash;&gt;-->
+<!--&lt;!&ndash;                Quay lại&ndash;&gt;-->
+<!--&lt;!&ndash;            </a>&ndash;&gt;-->
+<!--&lt;!&ndash;            <input type="submit" value="Cập nhật" class="btn btn-primary" style="margin-bottom: 10px">&ndash;&gt;-->
+<!--&lt;!&ndash;        </form>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;</section>&ndash;&gt;-->
+<!--&lt;!&ndash;<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"&ndash;&gt;-->
+<!--&lt;!&ndash;        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"&ndash;&gt;-->
+<!--&lt;!&ndash;        crossorigin="anonymous"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;</body>&ndash;&gt;-->
+<!--&lt;!&ndash;</html>&ndash;&gt;-->
+
+
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml"-->
+<!--      layout:decorate="~{/admin/_layout.html}">-->
+<!--<head>-->
+<!--    <title>Content page</title>-->
+<!--    &lt;!&ndash;    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>&ndash;&gt;-->
+<!--    &lt;!&ndash;    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script></head>&ndash;&gt;-->
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"-->
+<!--          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"-->
+<!--            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"-->
+<!--            crossorigin="anonymous"></script>-->
+<!--</head>-->
+<!--<body>-->
+<!--<section layout:fragment="sanpham_sua">-->
+<!--    <div class="modal-body col-md-8 col-md-offset-4">-->
+<!--        <div class="input-group input-group-sm mb-3" style="text-align: center">-->
+<!--            <div class="input-group-prepend col-sm-12">-->
+<!--                <span class="input-group-text" id="inputGroup-sizing-sm">PRODUCT</span>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        <form th:action="@{/admin/san-pham/sua-san-pham/{id}(id=${sanpham.id})}" th:object="${sanpham}" method="post">-->
+
+<!--            <div class="input-group input-group-sm mb-3">-->
+<!--                <div class="input-group-prepend col-sm-3">-->
+<!--                    <span class="input-group-text" id="inputGroup-sizing-sm">Tên sản phẩm</span>-->
+<!--                </div>-->
+<!--                <input type="text" class="form-control col-sm-9" aria-label="Small"-->
+<!--                       aria-describedby="inputGroup-sizing-sm"-->
+<!--                       name="tensanpham"-->
+<!--                       th:field="*{tensanpham}"-->
+<!--                />-->
+<!--            </div>-->
+<!--            <div class="input-group input-group-sm mb-3">-->
+<!--                <div class="input-group-prepend col-sm-3">-->
+<!--                    <span class="input-group-text" id="inputGroup-sizing-sm">Giá bán</span>-->
+<!--                </div>-->
+<!--                <input type="number" class="form-control col-sm-9" aria-label="Small"-->
+<!--                       aria-describedby="inputGroup-sizing-sm"-->
+<!--                       name="giaban"-->
+<!--                       th:field="*{giaban}"-->
+<!--                />-->
+<!--            </div>-->
+<!--            <div class="input-group input-group-sm mb-3">-->
+<!--                <div class="input-group-prepend col-sm-3">-->
+<!--                    <span class="input-group-text" id="inputGroup-sizing-sm">Số lượng</span>-->
+<!--                </div>-->
+<!--                <input type="number" class="form-control col-sm-9" aria-label="Small"-->
+<!--                       aria-describedby="inputGroup-sizing-sm"-->
+<!--                       name="tongsoluong"-->
+<!--                       th:field="*{tongsoluong}"-->
+<!--                />-->
+<!--            </div>-->
+<!--            <div class="input-group input-group-sm mb-3">-->
+<!--                <div class="input-group-prepend col-sm-3">-->
+<!--                    <span class="input-group-text" id="inputGroup-sizing-sm">Giới tính</span>-->
+<!--                </div>-->
+<!--                <select th:field="*{gioitinh}" class="form-select col-sm-9" aria-label="Default select example"-->
+<!--                        name="gioitinh">-->
+<!--                    &lt;!&ndash;                    <option value="">Lựa chọn giới tính</option>&ndash;&gt;-->
+<!--                    <option selected value="nam">Nam</option>-->
+<!--                    <option value="nu">Nữ</option>-->
+<!--                </select>-->
+<!--                </select>-->
+<!--            </div>-->
+<!--            <div class="input-group mb-3">-->
+<!--                <div class="input-group-prepend col-sm-3">-->
+<!--                    <span class="input-group-text" id="inputGroup-sizing-sm">Mô tả</span>-->
+<!--                </div>-->
+<!--                <textarea class="form-control col-sm-9" id="exampleFormControlTextarea4" rows="3"-->
+<!--                          name="mota" th:field="*{mota}"></textarea>-->
+<!--            </div>-->
+<!--            <div class="input-group mb-3">-->
+<!--                <div class="input-group-prepend col-sm-3">-->
+<!--                    <span class="input-group-text" id="inputGroup-sizing-sm">Ảnh chính</span>-->
+<!--                </div>-->
+<!--                <img th:src="*{anhchinh}" alt="Ảnh sản phẩm" style="width:150px; height:150px">-->
+<!--                <input type="file" class="form-control custom-file-input col-sm-9" id="inputGroupFile02"-->
+<!--                       aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="anhchinh"-->
+<!--                       th:field="*{anhchinh}"/>-->
+<!--            </div>-->
+<!--            <div class="input-group mb-3">-->
+<!--                <div class="input-group-prepend col-sm-3">-->
+<!--                    <span class="input-group-text" id="inputGroup-sizing-sm">Ảnh phụ 1</span>-->
+<!--                </div>-->
+<!--                <img th:src="*{anhphu1}" alt="Ảnh sản phẩm" style="width:150px; height:150px">-->
+<!--                <input type="file" class="form-control custom-file-input col-sm-9" id="inputGroupFile02"-->
+<!--                       aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="anhphu1"-->
+<!--                       th:field="*{anhphu1}"/>-->
+<!--            </div>-->
+<!--            <div class="input-group mb-3">-->
+<!--                <div class="input-group-prepend col-sm-3">-->
+<!--                    <span class="input-group-text" id="inputGroup-sizing-sm">Ảnh phụ 2</span>-->
+<!--                </div>-->
+<!--                <img th:src="*{anhphu2}" alt="Ảnh sản phẩm" style="width:150px; height:150px">-->
+<!--                <input type="file" class="form-control custom-file-input col-sm-9" id="inputGroupFile02"-->
+<!--                       aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="anhphu2"-->
+<!--                       th:field="*{anhphu2}"/>-->
+<!--            </div>-->
+<!--            <div class="input-group mb-3">-->
+<!--                <div class="input-group-prepend col-sm-3">-->
+<!--                    <span class="input-group-text" id="inputGroup-sizing-sm">Ảnh phụ 3</span>-->
+<!--                </div>-->
+<!--                <img th:src="*{anhphu3}" alt="Ảnh sản phẩm" style="width:150px; height:150px">-->
+<!--                <input type="file" class="form-control custom-file-input col-sm-9" id="inputGroupFile02"-->
+<!--                       aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="anhphu3"-->
+<!--                       th:field="*{anhphu3}"/>-->
+<!--            </div>-->
+<!--            <a th:href="@{/admin/san-pham}" type="button" class="btn btn-secondary"-->
+<!--               style="margin-bottom: 10px; border: none">-->
+<!--                Quay lại-->
+<!--            </a>-->
+<!--            <input type="submit" value="Cập nhật" class="btn btn-primary" style="margin-bottom: 10px">-->
+<!--        </form>-->
+
+<!--    </div>-->
+<!--</section>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"-->
+<!--        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"-->
+<!--        crossorigin="anonymous"></script>-->
+<!--</body>-->
+<!--</html>-->
+
+
 <!DOCTYPE html>
 <html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml"
       layout:decorate="~{/admin/_layout.html}">
@@ -21,54 +293,7 @@
         </div>
 
         <form th:action="@{/admin/san-pham/sua-san-pham/{id}(id=${sanpham.id})}" th:object="${sanpham}" method="post">
-            <!--            <div class="input-group input-group-sm mb-3">-->
-            <!--                <div class="input-group-prepend col-sm-3">-->
-            <!--                    <span class="input-group-text" id="inputGroup-sizing-sm">Tên sản phẩm</span>-->
-            <!--                </div>-->
-            <!--                <input type="text" class="form-control col-sm-9" aria-label="Small"-->
-            <!--                       aria-describedby="inputGroup-sizing-sm"-->
-            <!--                       name="tensanpham"-->
-            <!--                       th:field="*{tensanpham}"-->
-            <!--                />-->
-            <!--            </div>-->
-            <!--            <div class="input-group input-group-sm mb-3">-->
-            <!--                <div class="input-group-prepend col-sm-3">-->
-            <!--                    <span class="input-group-text" id="inputGroup-sizing-sm">Giá bán</span>-->
-            <!--                </div>-->
-            <!--                <input type="number" class="form-control col-sm-9" aria-label="Small"-->
-            <!--                       aria-describedby="inputGroup-sizing-sm"-->
-            <!--                       name="giaban"-->
-            <!--                        th:field="*{giaban}"-->
-            <!--                />-->
-            <!--            </div>-->
-            <!--            <div class="input-group input-group-sm mb-3">-->
-            <!--                <div class="input-group-prepend col-sm-3">-->
-            <!--                    <span class="input-group-text" id="inputGroup-sizing-sm">Giới tính</span>-->
-            <!--                </div>-->
-            <!--                <select th:field="*{gioitinh}" class="form-select col-sm-9" aria-label="Default select example" name="gioitinh">-->
-            <!--&lt;!&ndash;                    <option value="">Lựa chọn giới tính</option>&ndash;&gt;-->
-            <!--                    <option selected value="Nam">Nam</option>-->
-            <!--                    <option value="Nữ">Nữ</option>-->
-            <!--                    <option value="Unisex">Unisex</option>-->
-            <!--                    </select>-->
-            <!--                </select>-->
-            <!--            </div>-->
 
-            <!--&lt;!&ndash;            <div class="input-group mb-3">&ndash;&gt;-->
-            <!--&lt;!&ndash;                <div class="input-group-prepend col-sm-3">&ndash;&gt;-->
-            <!--&lt;!&ndash;                    <span class="input-group-text" id="inputGroup-sizing-sm">Mô tả</span>&ndash;&gt;-->
-            <!--&lt;!&ndash;                </div>&ndash;&gt;-->
-            <!--&lt;!&ndash;                <textarea class="form-control col-sm-9" id="exampleFormControlTextarea4" rows="3"&ndash;&gt;-->
-            <!--&lt;!&ndash;                ></textarea>&ndash;&gt;-->
-            <!--&lt;!&ndash;            </div>&ndash;&gt;-->
-
-            <!--&lt;!&ndash;            <div class="input-group mb-3">&ndash;&gt;-->
-            <!--&lt;!&ndash;                <div class="input-group-prepend col-sm-3">&ndash;&gt;-->
-            <!--&lt;!&ndash;                    <span class="input-group-text" id="inputGroup-sizing-sm">Ảnh chính</span>&ndash;&gt;-->
-            <!--&lt;!&ndash;                </div>&ndash;&gt;-->
-            <!--&lt;!&ndash;                <input type="file" class="form-control custom-file-input col-sm-9" id="inputGroupFile02"&ndash;&gt;-->
-            <!--&lt;!&ndash;                       aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="anhchinh"/>&ndash;&gt;-->
-            <!--&lt;!&ndash;            </div>&ndash;&gt;-->
             <div class="input-group input-group-sm mb-3">
                 <div class="input-group-prepend col-sm-3">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Tên sản phẩm</span>
@@ -106,12 +331,9 @@
                 <select th:field="*{gioitinh}" class="form-select col-sm-9" aria-label="Default select example"
                         name="gioitinh">
                     <!--                    <option value="">Lựa chọn giới tính</option>-->
-                    <option selected value="Nam">Nam</option>
-                    <option value="Nữ">Nữ</option>
-                    <option value="Unisex">Unisex</option>
+                    <option selected value="nam">Nam</option>
+                    <option value="nu">Nữ</option>
                 </select>
-                </select>
-
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend col-sm-3">
@@ -120,6 +342,33 @@
                 <textarea class="form-control col-sm-9" id="exampleFormControlTextarea4" rows="3"
                           name="mota" th:field="*{mota}"></textarea>
             </div>
+            <!--LỖI CHƯA BINDING ĐƯỢC DỮ LIỆU LÊN Ô SELECT-->
+            <!--            <div class="input-group input-group-sm mb-3" th:object="${danhsachdanhmuc}">-->
+            <!--                <div class="input-group-prepend col-sm-3">-->
+            <!--                    <span class="input-group-text" id="inputGroup-sizing-sm">Danh mục</span>-->
+            <!--                </div>-->
+            <!--                <select class="form-select col-sm-9"-->
+            <!--                        aria-label="Default select example"-->
+            <!--                        name="danhmuc">-->
+            <!--                    <option value="">Lựa chọn danh mục</option>-->
+            <!--                    <option th:each="danhmuc : ${danhsachdanhmuc}"-->
+            <!--                            th:value="${danhmuc.id}"-->
+            <!--                            th:utext="${danhmuc.tendanhmuc}"/>-->
+            <!--                </select>-->
+            <!--            </div>-->
+            <!--            <div class="input-group input-group-sm mb-3" th:object="${danhsachthuonghieu}">-->
+            <!--                <div class="input-group-prepend col-sm-3">-->
+            <!--                    <span class="input-group-text" id="inputGroup-sizing-sm">Thương hiệu</span>-->
+            <!--                </div>-->
+            <!--                <select class="form-select col-sm-9"-->
+            <!--                        aria-label="Default select example"-->
+            <!--                        name="thuonghieu">-->
+            <!--                    <option value="">Lựa chọn thương hiệu</option>-->
+            <!--                    <option th:each="thuonghieu : ${danhsachthuonghieu}"-->
+            <!--                            th:value="${thuonghieu.id}"-->
+            <!--                            th:utext="${thuonghieu.tenthuonghieu}"/>-->
+            <!--                </select>-->
+            <!--            </div>-->
             <div class="input-group mb-3">
                 <div class="input-group-prepend col-sm-3">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Ảnh chính</span>
@@ -128,6 +377,33 @@
                 <input type="file" class="form-control custom-file-input col-sm-9" id="inputGroupFile02"
                        aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="anhchinh"
                        th:field="*{anhchinh}"/>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend col-sm-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Ảnh phụ 1</span>
+                </div>
+                <img th:src="*{anhphu1}" alt="Ảnh sản phẩm" style="width:150px; height:150px">
+                <input type="file" class="form-control custom-file-input col-sm-9" id="inputGroupFile02"
+                       aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="anhphu1"
+                       th:field="*{anhphu1}"/>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend col-sm-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Ảnh phụ 2</span>
+                </div>
+                <img th:src="*{anhphu2}" alt="Ảnh sản phẩm" style="width:150px; height:150px">
+                <input type="file" class="form-control custom-file-input col-sm-9" id="inputGroupFile02"
+                       aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="anhphu2"
+                       th:field="*{anhphu2}"/>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend col-sm-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Ảnh phụ 3</span>
+                </div>
+                <img th:src="*{anhphu3}" alt="Ảnh sản phẩm" style="width:150px; height:150px">
+                <input type="file" class="form-control custom-file-input col-sm-9" id="inputGroupFile02"
+                       aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="anhphu3"
+                       th:field="*{anhphu3}"/>
             </div>
             <a th:href="@{/admin/san-pham}" type="button" class="btn btn-secondary"
                style="margin-bottom: 10px; border: none">

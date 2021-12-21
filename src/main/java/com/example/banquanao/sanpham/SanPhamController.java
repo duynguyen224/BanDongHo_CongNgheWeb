@@ -2,6 +2,7 @@ package com.example.banquanao.sanpham;
 
 import com.example.banquanao.danhmuc.DanhMuc;
 import com.example.banquanao.danhmuc.DanhMucService;
+import com.example.banquanao.thuonghieu.ThuongHieuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -31,6 +32,9 @@ public class SanPhamController {
     @Autowired
     private DanhMucService danhMucService;
 
+    @Autowired
+    private ThuongHieuService thuongHieuService;
+
     @RequestMapping("")
     public String sanpham(Model model) {
         model.addAttribute("danhsachsanpham", sanPhamService.tatCaSanPham());
@@ -39,9 +43,10 @@ public class SanPhamController {
 
 
     @GetMapping("them-moi-san-pham")
-    public String themmoi(Model modelsanpham, Model danhsachdanhmuc){
+    public String themmoi(Model modelsanpham, Model danhsachdanhmuc, Model danhsachthuonghieu){
         modelsanpham.addAttribute("sanpham", new SanPham());
         danhsachdanhmuc.addAttribute("danhsachdanhmuc", danhMucService.tatCaDanhMuc());
+        danhsachthuonghieu.addAttribute("danhsachthuonghieu", thuongHieuService.tatCaThuongHieu());
         return "admin/sanpham_them";
     }
 
@@ -54,6 +59,7 @@ public class SanPhamController {
     @GetMapping("sua-san-pham/{id}")
     public String sua(@PathVariable(name = "id") Long id, Model model){
         model.addAttribute("sanpham", sanPhamService.timKiemSanPham(id));
+        //modelThuongHieu.addAttribute("thuonghieu_sanpham",)
         return "admin/sanpham_sua";
     }
 

@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-
 public class HomeController {
     @Autowired
     private SanPhamService sanPhamService;

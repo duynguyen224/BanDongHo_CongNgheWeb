@@ -1,6 +1,7 @@
 package com.example.banquanao.sanpham;
 
 import com.example.banquanao.danhmuc.DanhMuc;
+import com.example.banquanao.thuonghieu.ThuongHieu;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
@@ -14,4 +15,7 @@ public interface SanPhamService {
     public void xoaSanPham(Long id);
     public void suaSanPham(SanPham sanpham);
     public SanPham timKiemSanPham(Long id);
+    public List<SanPham> lay4SanPham();
+    public List<SanPham> timTheoGioiTinh(String gioitinh);
+    public List<SanPham> timTheoTenSanPham(String ten);
 }
