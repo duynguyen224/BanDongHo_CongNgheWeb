@@ -1,6 +1,8 @@
 package com.example.banquanao.client;
 
 import com.example.banquanao.sanpham.SanPhamService;
+import com.example.banquanao.thuonghieu.ThuongHieu;
+import com.example.banquanao.thuonghieu.ThuongHieuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,19 +16,33 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class ClientSanPhamController {
     @Autowired
     private SanPhamService sanPhamService;
+    @Autowired
+    private ThuongHieuService thuongHieuService;
 
     @GetMapping("")
-    public String sanpham(Model model){
-        model.addAttribute("danhsachsanpham", sanPhamService.tatCaSanPham());
+    public String sanpham(Model modelSanPham, Model modelThuongHieu){
+        modelSanPham.addAttribute("danhsachsanpham", sanPhamService.tatCaSanPham());
+        modelThuongHieu.addAttribute("danhsachthuonghieu", thuongHieuService.tatCaThuongHieu());
         return "client/sanpham";
     }
 
     // đây là hàm lọc theo giới tính
     @GetMapping("gioi-tinh/{gioitinh}")
-    public String sanpham_gioitinh(@PathVariable(name = "gioitinh") String gioitinh, Model model){
+    public String sanpham_gioitinh(@PathVariable(name = "gioitinh") String gioitinh, Model model, Model modelThuongHieu){
         model.addAttribute("danhsachsanpham", sanPhamService.timTheoGioiTinh(gioitinh));
+        modelThuongHieu.addAttribute("danhsachthuonghieu", thuongHieuService.tatCaThuongHieu());
         return "client/sanpham";
     }
+
+    // đây là hàm lọc theo giới tính
+    @GetMapping("thuong-hieu/{thuonghieu}")
+    public String sanpham_thuonghieu(@PathVariable(name = "thuonghieu") String tenthuonghieu, Model model, Model modelThuongHieu){
+        ThuongHieu thuonghieu = thuongHieuService.timKiemThuongHieuTheoTen(tenthuonghieu); // tìm kiếm thương hiệu từ tên thương hiệu
+        model.addAttribute("danhsachsanpham", sanPhamService.timKiemTheoThuongHieu(thuonghieu));
+        modelThuongHieu.addAttribute("danhsachthuonghieu", thuongHieuService.tatCaThuongHieu());
+        return "client/sanpham";
+    }
+
 
     // đây là hàm tìm kiếm tên sản phẩm
     @GetMapping("search")

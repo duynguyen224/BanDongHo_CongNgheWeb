@@ -31,12 +31,46 @@ public class ShoppingCartController {
         return "client/giohang";
     }
 
+    @GetMapping("cap-nhat-xoa")
+    public String giohangXoa(Model modelGiohang, Model ModelTongTien, Model modelDonHang) throws InterruptedException {
+        // dừng 1 giây để hiện cái modal lên cho ngầu
+        modelGiohang.addAttribute("giohang", shoppingCartService.sanPhamTrongGioHang());
+        ModelTongTien.addAttribute("tongtien", shoppingCartService.tinhTongTien());
+        modelDonHang.addAttribute("donhang", new DonHang());
+        return "client/giohang";
+    }
+
+    @GetMapping("cap-nhat-them")
+    public String giohangThem(Model modelGiohang, Model ModelTongTien, Model modelDonHang) throws InterruptedException {
+        // dừng 1 giây để hiện cái modal lên cho ngầu
+        modelGiohang.addAttribute("giohang", shoppingCartService.sanPhamTrongGioHang());
+        ModelTongTien.addAttribute("tongtien", shoppingCartService.tinhTongTien());
+        modelDonHang.addAttribute("donhang", new DonHang());
+        return "client/giohang";
+    }
+
+
     @GetMapping("them-vao-gio/{id}")
     public String themVaoGio(@PathVariable(name = "id") Long id){
         SanPham sanPham = sanPhamService.timKiemSanPham(id);
         shoppingCartService.themSanPhamVaoGio(sanPham);
         return "redirect:/gio-hang";
     }
+
+    @GetMapping("xoa-san-pham/{id}")
+    public String xoaSanPham(@PathVariable(name = "id") Long id){
+        SanPham sanPham = sanPhamService.timKiemSanPham(id);
+        shoppingCartService.xoaSanPhamTrongGio(sanPham);
+        return "redirect:/gio-hang/cap-nhat-xoa";
+    }
+
+    @GetMapping("them-san-pham/{id}")
+    public String themSanPham(@PathVariable(name = "id") Long id){
+        SanPham sanPham = sanPhamService.timKiemSanPham(id);
+        shoppingCartService.themSanPhamVaoGio(sanPham);
+        return "redirect:/gio-hang/cap-nhat-them";
+    }
+
 
 //    , @RequestParam(name = "tongtien")BigDecimal tongtien
     @PostMapping("thanh-toan")
@@ -45,4 +79,5 @@ public class ShoppingCartController {
         shoppingCartService.thanhToan(donHangService.donHangMoiNhat());
         return "client/thanhcong";
     }
+
 }

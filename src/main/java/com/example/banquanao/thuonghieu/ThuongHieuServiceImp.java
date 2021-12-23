@@ -39,4 +39,10 @@ public class ThuongHieuServiceImp implements ThuongHieuService{
     public ThuongHieu timKiemThuongHieu(Long id) {
         return thuongHieuRepository.findById(id).orElseThrow(() -> new IllegalStateException("OPPS, lỗi mất rồi"));
     }
+
+    @Override
+    public ThuongHieu timKiemThuongHieuTheoTen(String tenthuonghieu) {
+        return thuongHieuRepository.timKiemThuongHieuTheoTen(tenthuonghieu);
+    }
+
 }

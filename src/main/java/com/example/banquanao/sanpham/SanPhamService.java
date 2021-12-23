@@ -18,4 +18,5 @@ public interface SanPhamService {
     public List<SanPham> lay4SanPham();
     public List<SanPham> timTheoGioiTinh(String gioitinh);
     public List<SanPham> timTheoTenSanPham(String ten);
+    public List<SanPham> timKiemTheoThuongHieu(ThuongHieu thuonghieu);
 }

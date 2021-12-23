@@ -13,22 +13,22 @@ commit;
 
 insert into sanpham(tensanpham, giaban, tongsoluong, anhchinh, anhphu1, anhphu2, anhphu3, slug, mota, gioitinh,
              madanhmuc, mathuonghieu)
-values ('Đồng hồ 1', 100000, 100, '/image_upload/TKB.png', '/image_upload/TKB.png', '/image_upload/TKB.png',
-        '/image_upload/TKB.png', '/image_upload/TKB.png',
+values ('Đồng hồ 1', 100000, 100, '/image_upload/1.webp', '/image_upload/TKB.png', '/image_upload/TKB.png',
+        '/image_upload/1.webp', '/image_upload/TKB.png',
         '/image_upload/TKB.png', 'nu',
         1, 1);
 commit;
 insert into sanpham(tensanpham, giaban, tongsoluong, anhchinh, anhphu1, anhphu2, anhphu3, slug, mota, gioitinh,
                     madanhmuc, mathuonghieu)
-values ('Đồng hồ 1', 100000, 100, '/image_upload/TKB.png', '/image_upload/TKB.png', '/image_upload/TKB.png',
-        '/image_upload/TKB.png', '/image_upload/TKB.png',
+values ('Đồng hồ 1', 100000, 100, '/image_upload/m116519ln-0038.webp', '/image_upload/TKB.png', '/image_upload/TKB.png',
+        '/image_upload/m116519ln-0038.webp', '/image_upload/TKB.png',
         '/image_upload/TKB.png', 'nu',
         1, 1);
 commit;
 insert into sanpham(tensanpham, giaban, tongsoluong, anhchinh, anhphu1, anhphu2, anhphu3, slug, mota, gioitinh,
                     madanhmuc, mathuonghieu)
-values ('Đồng hồ 1', 100000, 100, '/image_upload/TKB.png', '/image_upload/TKB.png', '/image_upload/TKB.png',
-        '/image_upload/TKB.png', '/image_upload/TKB.png',
+values ('Đồng hồ 1', 100000, 100, 'm116519ln-0038.webp', '/image_upload/TKB.png', '/image_upload/TKB.png',
+        'm116519ln-0038.webp', '/image_upload/TKB.png',
         '/image_upload/TKB.png', 'nu',
         1, 1);
 commit;insert into sanpham(tensanpham, giaban, tongsoluong, anhchinh, anhphu1, anhphu2, anhphu3, slug, mota, gioitinh,

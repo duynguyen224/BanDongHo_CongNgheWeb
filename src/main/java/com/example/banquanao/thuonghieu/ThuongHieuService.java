@@ -11,4 +11,5 @@ public interface ThuongHieuService {
     public List<ThuongHieu> tatCaThuongHieu();
     public void suaThuongHieu(ThuongHieu thuonghieu);
     public ThuongHieu timKiemThuongHieu(Long id);
+    public ThuongHieu timKiemThuongHieuTheoTen(String tenthuonghieu);
 }
