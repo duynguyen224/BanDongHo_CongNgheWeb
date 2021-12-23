@@ -41,26 +41,23 @@ public class SanPhamServiceImp implements SanPhamService {
         sanphamCu.setGioitinh(sanpham.getGioitinh());
         sanphamCu.setTongsoluong(sanpham.getTongsoluong());
 
-        if (sanphamCu.getAnhchinh().equals(sanpham.getAnhchinh())) {
-            sanphamCu.setAnhchinh(sanpham.getAnhchinh().substring(14));
-        } else {
+        // nếu có thay đổi ảnh mới
+
+
+        // nếu ảnh không có thay đổi gì
+        if(!sanpham.getAnhchinh().equals("/image_upload/")){
             sanphamCu.setAnhchinh(sanpham.getAnhchinh().substring(14));
         }
-        if (sanphamCu.getAnhphu1().equals(sanpham.getAnhphu1())) {
-            sanphamCu.setAnhphu1(sanpham.getAnhphu1().substring(14));
-        } else {
+        if(!sanpham.getAnhphu1().equals("/image_upload/")){
             sanphamCu.setAnhphu1(sanpham.getAnhphu1().substring(14));
         }
-        if (sanphamCu.getAnhphu2().equals(sanpham.getAnhphu2())) {
-            sanphamCu.setAnhphu2(sanpham.getAnhphu2().substring(14));
-        } else {
+        if(!sanpham.getAnhphu2().equals("/image_upload/")){
             sanphamCu.setAnhphu2(sanpham.getAnhphu2().substring(14));
         }
-        if (sanphamCu.getAnhphu3().equals(sanpham.getAnhphu3())) {
-            sanphamCu.setAnhphu3(sanpham.getAnhphu3().substring(14));
-        } else {
+        if(!sanpham.getAnhphu3().equals("/image_upload/")){
             sanphamCu.setAnhphu3(sanpham.getAnhphu3().substring(14));
         }
+
         sanPhamRepository.save(sanphamCu);
     }
 

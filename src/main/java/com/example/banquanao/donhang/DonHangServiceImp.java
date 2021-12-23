@@ -39,8 +39,7 @@ public class DonHangServiceImp implements DonHangService {
         DonHang donhangCu = donHangRepository.findById(donhang.getId())
                 .orElseThrow(() -> new IllegalStateException("OPPS, lỗi mất rồi"));
         donhangCu.setTrangthai(donhang.getTrangthai());
-
-        donHangRepository.save(donhang);
+        donHangRepository.save(donhangCu);
     }
 
 

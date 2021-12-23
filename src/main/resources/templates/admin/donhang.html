@@ -367,6 +367,7 @@
                         <th>Địa chỉ giao hàng</th>
                         <th>Số điện thoại</th>
                         <th>Email</th>
+                        <th>Tổng tiền</th>
                         <th>Thao tác</th>
                     </tr>
                     </thead>
@@ -378,6 +379,7 @@
                         <th>Địa chỉ giao hàng</th>
                         <th>Số điện thoại</th>
                         <th>Email</th>
+                        <th>Tổng tiền</th>
                         <th>Thao tác</th>
                     </tr>
                     </tfoot>
@@ -393,6 +395,7 @@
                         <td th:text="${donhang.diachigiaohang}"></td>
                         <td th:text="${donhang.sodienthoai}"></td>
                         <td th:text="${donhang.email}"></td>
+                        <td th:text="'$ ' + ${donhang.tongtien}"></td>
                         <td>
                             <div style="width: 100px">
                                 <a th:href="@{/admin/don-hang/xem-don-hang/{id}(id=${donhang.id})}" type="button" style="border: none;">

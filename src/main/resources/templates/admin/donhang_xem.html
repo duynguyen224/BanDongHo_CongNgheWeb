@@ -20,9 +20,9 @@
             </div>
         </div>
 
-        <div th:each="ctdh : ${chitietdonhang}">
-            <h1 th:text="${ctdh.sanpham.id}"></h1> ông làm nốt nhớ
-        </div>
+<!--        <div th:each="ctdh : ${chitietdonhang}">-->
+<!--            <h1 th:text="${ctdh.sanpham.id}"></h1>-->
+<!--        </div>-->
 
         <form th:action="@{/admin/don-hang/xem-don-hang/{id}(id=${donhang.id})}" th:object="${donhang}" method="post">
 
@@ -76,6 +76,17 @@
                        th:field="*{email}" readonly
                 />
             </div>
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend col-sm-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Tổng tiền</span>
+                </div>
+                <input type="text" class="form-control col-sm-9" aria-label="Small"
+                       aria-describedby="inputGroup-sizing-sm"
+                       name="tongtien"
+                       th:field="*{tongtien}" readonly
+                />
+            </div>
+
 
             <div class="input-group input-group-sm mb-3">
                 <div class="input-group-prepend col-sm-3">
@@ -100,38 +111,35 @@
             </a>
             <input type="submit" value="Cập nhật" class="btn btn-primary" style="margin-bottom: 10px">
             <div class="card mb-4">
-                <div class="card-header">
-                    <i class="fas fa-table me-1"></i>
-                    DataTable Example
-                </div>
                 <div class="card-body">
                     <table id="datatablesSimple">
                         <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Ngày lập</th>
-                            <th>Trạng thái</th>
-                            <th>Địa chỉ giao hàng</th>
-                            <th>Số điện thoại</th>
-                            <th>Email</th>
-                            <th>Thao tác</th>
+                            <th>Ảnh chính</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Giá bán</th>
+                            <th>Số lượng</th>
                         </tr>
                         </thead>
                         <tfoot>
                         <tr>
                             <th>ID</th>
-                            <th>Ngày lập</th>
-                            <th>Trạng thái</th>
-                            <th>Địa chỉ giao hàng</th>
-                            <th>Số điện thoại</th>
-                            <th>Email</th>
-                            <th>Thao tác</th>
+                            <th>Ảnh chính</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Giá bán</th>
+                            <th>Số lượng mua</th>
                         </tr>
                         </tfoot>
                         <tbody>
-                        <tr th:each=" sp: ${sanpham}">
-                            <td th:text="${sp.id}"></td>
+                        <tr th:each="ctdh : ${chitietdonhang}">
+                            <td th:text="${ctdh.sanpham.id}"></td>
+                            <td>
+                                <img th:src="${ctdh.sanpham.anhchinh}" alt="ảnh sản phẩm" style="width: 50px; height: 70px;">
                             </td>
+                            <td th:text="${ctdh.sanpham.tensanpham}"></td>
+                            <td th:text="${ctdh.sanpham.giaban}"></td>
+                            <td th:text="${ctdh.soluongmua}"></td>
                         </tr>
                         </tbody>
                     </table>
