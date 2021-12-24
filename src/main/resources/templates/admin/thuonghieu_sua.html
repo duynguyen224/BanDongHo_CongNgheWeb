@@ -12,35 +12,35 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
-<section layout:fragment="taikhoan_sua">
+<section layout:fragment="thuonghieu_sua">
     <div class="modal-body col-md-8 col-md-offset-4">
         <div class="input-group input-group-sm mb-3" style="text-align: center">
             <div class="input-group-prepend col-sm-12">
-                <span class="input-group-text" id="inputGroup-sizing-sm">Tài khoản</span>
+                <span class="input-group-text" id="inputGroup-sizing-sm">Thương hiệu</span>
             </div>
         </div>
 
-        <form th:action="@{/admin/tai-khoan/sua-tai-khoan/{id}(id=${taikhoan.id})}" th:object="${taikhoan}" method="post">
+        <form th:action="@{/admin/thuong-hieu/sua-thuong-hieu/{id}(id=${thuonghieu.id})}" th:object="${thuonghieu}" method="post">
 
             <div class="input-group input-group-sm mb-3">
                 <div class="input-group-prepend col-sm-3">
-                    <span class="input-group-text" id="inputGroup-sizing-sm">Tên tài khoản</span>
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Tên thương hiệu</span>
                 </div>
                 <input type="text" class="form-control col-sm-9" aria-label="Small"
                        aria-describedby="inputGroup-sizing-sm"
                        name="tentaikhoan"
-                       th:field="*{tentaikhoan}"
+                       th:field="*{tenthuonghieu}"
                 />
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend col-sm-3">
-                    <span class="input-group-text" id="inputGroup-sizing-sm">Mật khẩu</span>
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Mô tả</span>
                 </div>
                 <textarea class="form-control col-sm-9" id="exampleFormControlTextarea4" rows="3"
-                          name="matkhau" th:field="*{matkhau}"></textarea>
+                          name="mota" th:field="*{mota}"></textarea>
             </div>
 
-            <a th:href="@{/admin/tai-khoan}" type="button" class="btn btn-secondary"
+            <a th:href="@{/admin/thuong-hieu}" type="button" class="btn btn-secondary"
                style="margin-bottom: 10px; border: none">
                 Quay lại
             </a>

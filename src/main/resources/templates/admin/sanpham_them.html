@@ -294,7 +294,7 @@
                 <input type="text" class="form-control col-sm-9" aria-label="Small"
                        aria-describedby="inputGroup-sizing-sm"
                        name="tensanpham"
-                       th:field="*{tensanpham}"
+                       th:field="*{tensanpham}" required
                 />
             </div>
             <div class="input-group input-group-sm mb-3">
@@ -304,7 +304,7 @@
                 <input type="number" class="form-control col-sm-9" aria-label="Small"
                        aria-describedby="inputGroup-sizing-sm"
                        name="giaban"
-                       th:field="*{giaban}"
+                       th:field="*{giaban}" required
                 />
             </div>
             <div class="input-group input-group-sm mb-3">
@@ -314,7 +314,7 @@
                 <input type="number" class="form-control col-sm-9" aria-label="Small"
                        aria-describedby="inputGroup-sizing-sm"
                        name="tongsoluong"
-                       th:field="*{tongsoluong}"
+                       th:field="*{tongsoluong}" required
                 />
             </div>
 
@@ -323,7 +323,7 @@
                     <span class="input-group-text" id="inputGroup-sizing-sm">Giới tính</span>
                 </div>
                 <select th:field="*{gioitinh}" class="form-select col-sm-9" aria-label="Default select example"
-                        name="gioitinh">
+                        name="gioitinh" required>
                     <option selected value="">Lựa chọn giới tính</option>
                     <option value="nam">Nam</option>
                     <option value="nu">Nữ</option>
@@ -338,7 +338,7 @@
                 </div>
                 <select class="form-select col-sm-9"
                         aria-label="Default select example"
-                        name="danhmuc">
+                        name="danhmuc" required>
                     <option value="">Lựa chọn danh mục</option>
                     <option th:each="danhmuc : ${danhsachdanhmuc}"
                             th:value="${danhmuc.id}"
@@ -351,7 +351,7 @@
                 </div>
                 <select class="form-select col-sm-9"
                         aria-label="Default select example"
-                        name="thuonghieu">
+                        name="thuonghieu" required>
                     <option value="">Lựa chọn thương hiệu</option>
                     <option th:each="thuonghieu : ${danhsachthuonghieu}"
                             th:value="${thuonghieu.id}"
