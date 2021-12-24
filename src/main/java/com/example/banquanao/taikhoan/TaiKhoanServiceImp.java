@@ -38,4 +38,15 @@ public class TaiKhoanServiceImp implements TaiKhoanService{
     public TaiKhoan timKiemTaiKhoan(Long id) {
         return taiKhoanRepository.findById(id).orElseThrow(() -> new IllegalStateException("OPPS, lỗi mất rồi"));
     }
+
+    @Override
+    public Boolean kiemTraDangNhap(String tentaikhoan, String matKhau) {
+        List<TaiKhoan> danhsachTaikhoan = taiKhoanRepository.findAll();
+        for (var taikhoan : danhsachTaikhoan){
+            if(taikhoan.getTentaikhoan().equals(tentaikhoan) && taikhoan.getMatkhau().equals(matKhau)){
+                return true;
+            }
+        }
+        return false;
+    }
 }

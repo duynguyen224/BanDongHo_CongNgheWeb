@@ -11,4 +11,5 @@ public interface TaiKhoanService {
     public List<TaiKhoan> tatCaTaiKhoan();
     public void suaTaiKhoan(TaiKhoan taikhoan);
     public TaiKhoan timKiemTaiKhoan(Long id);
+    public Boolean kiemTraDangNhap(String tentaikhoan, String matKhau);
 }
